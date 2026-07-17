@@ -16,9 +16,9 @@ def build_explainer() -> str:
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --wtw:#7F35B2;--deep:#48086F;--light:#F3EAF9;--mid:#C89FDC;
+  --wtw:#0d9488;--deep:#0f766e;--light:#ccfbf1;--mid:#5eead4;
   --onyx:#2F2C31;--g2:#5A5660;--g3:#949096;
-  --bg:#fff;--bg2:#f4f6fb;--border:#DDD5E8;
+  --bg:#fff;--bg2:#f4f6fb;--border:#d7e6e3;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--onyx);-webkit-font-smoothing:antialiased}
@@ -55,9 +55,9 @@ p{font-size:15px;color:var(--g2);line-height:1.7;margin-bottom:16px}
 .sources{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:24px 0}
 .src{background:var(--bg2);border:1px solid var(--border);border-radius:10px;
      padding:20px;border-top:3px solid}
-.src.hazus{border-top-color:#7F35B2}
+.src.hazus{border-top-color:#0d9488}
 .src-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
-.src.hazus .src-label{color:#7F35B2}
+.src.hazus .src-label{color:#0d9488}
 .src h3{font-size:14px;font-weight:700;color:var(--deep);margin-bottom:8px}
 .src p{font-size:13px;color:var(--g2);margin-bottom:10px;line-height:1.55}
 .src-meta{font-size:11px;color:var(--g3)}
@@ -186,27 +186,27 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
 <h2>What you can do</h2>
 <div class="features">
   <div class="feat">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7F35B2" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
     <div><strong>Filter and browse</strong>Narrow functions by material, occupancy, country, design level and loss type.</div>
   </div>
   <div class="feat">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7F35B2" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
     <div><strong>Compare two curves</strong>Overlay any two functions on the same chart with fully independent filter sets.</div>
   </div>
   <div class="feat">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7F35B2" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
     <div><strong>Export chart as PNG</strong>Download any chart with the selection title, ready for reports.</div>
   </div>
   <div class="feat">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7F35B2" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
     <div><strong>Copy data</strong>Copy the full data table to clipboard. In compare mode both curves are included side by side.</div>
   </div>
   <div class="feat">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7F35B2" stroke-width="2.5"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2.5"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
     <div><strong>Switch units</strong>Flood depth in m or ft, wind speed in m/s, km/h or mph, PGA in g or m/s&sup2;.</div>
   </div>
   <div class="feat">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7F35B2" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
     <div><strong>Browser-based</strong>Runs entirely in your browser. No software installation or account required.</div>
   </div>
 </div>
@@ -242,10 +242,7 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
 </div>
 
 <footer>
-  <p>&copy; 2026 Arash Nassirpour. All rights reserved.</p>
-  <p style="margin-top:6px;font-size:11px;opacity:.6">
-    FEMA HAZUS 6.1 (public domain)
-  </p>
+  <p style="font-size:11px;opacity:.6">Powered by FEMA HAZUS 6.1 (public domain)</p>
 </footer>
 
 <script>

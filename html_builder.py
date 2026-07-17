@@ -27,9 +27,9 @@ def build_html(flood_json: str, wind_json: str, eq_json: str, gem_json: str = '[
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --wtw:#7F35B2;--wtw-deep:#48086F;--wtw-light:#F3EAF9;--wtw-mid:#C89FDC;
+  --wtw:#0d9488;--wtw-deep:#0f766e;--wtw-light:#ccfbf1;--wtw-mid:#5eead4;
   --onyx:#2F2C31;--onyx2:#5A5660;--onyx3:#949096;
-  --bg:#FFFFFF;--bg2:#f4f6fb;--bg3:#EDE6F4;--border:#DDD5E8;
+  --bg:#FFFFFF;--bg2:#f4f6fb;--bg3:#e6f4f1;--border:#d7e6e3;
   --r:7px;--rl:12px;
   --slight:#1A7340;--moderate:#C47D00;--extensive:#C0321A;--complete:#48086F;
 }
