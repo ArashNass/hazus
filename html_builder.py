@@ -29,29 +29,29 @@ def build_html(flood_json: str, wind_json: str, eq_json: str, gem_json: str = '[
 :root{
   --wtw:#7F35B2;--wtw-deep:#48086F;--wtw-light:#F3EAF9;--wtw-mid:#C89FDC;
   --onyx:#2F2C31;--onyx2:#5A5660;--onyx3:#949096;
-  --bg:#FFFFFF;--bg2:#F8F5FB;--bg3:#EDE6F4;--border:#DDD5E8;
+  --bg:#FFFFFF;--bg2:#f4f6fb;--bg3:#EDE6F4;--border:#DDD5E8;
   --r:7px;--rl:12px;
   --slight:#1A7340;--moderate:#C47D00;--extensive:#C0321A;--complete:#48086F;
 }
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
      background:var(--bg2);color:var(--onyx);font-size:14px;min-height:100vh}
-.topbar{background:#0f2350;padding:0 32px;display:flex;align-items:center;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);overflow-x:auto}
+.topbar{background:#0d9488;padding:0 32px;display:flex;align-items:center;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);overflow-x:auto}
 .brand{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.3px;margin-right:28px;white-space:nowrap;flex-shrink:0}
-.brand span{color:#9fc0ff}
+.brand span{color:#99f6e4}
 .nav-tabs{display:flex;height:100%;align-items:center;gap:2px;flex:1}
 ── */
-.topbar{background:#0f2350;padding:0 32px;display:flex;align-items:center;
+.topbar{background:#0d9488;padding:0 32px;display:flex;align-items:center;
         height:56px;position:sticky;top:0;z-index:100;
         box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);
         gap:0;overflow-x:auto}
         box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);
         gap:0;overflow-x:auto}
 .brand{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.3px;margin-right:28px;white-space:nowrap;flex-shrink:0}
-.brand span{color:#9fc0ff}
+.brand span{color:#99f6e4}
 .nav-tabs{display:flex;height:100%;align-items:center;gap:2px;flex:1}
 .nav-tab{padding:0 18px;font-size:14px;font-weight:500;border:none;background:none;color:rgba(255,255,255,.55);cursor:pointer;border-bottom:3px solid transparent;transition:color .2s,border-color .2s;height:100%;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center;border-radius:0}
 .nav-tab:hover{color:rgba(255,255,255,.9);background:rgba(255,255,255,.04)}
-.nav-tab.active{color:#fff;border-bottom-color:#9fc0ff;background:none;font-weight:600}
+.nav-tab.active{color:#fff;border-bottom-color:#99f6e4;background:none;font-weight:600}
 .nav-sep{width:1px;height:18px;background:rgba(255,255,255,.15);margin:0 4px;flex-shrink:0}
 .page{display:none;padding:28px 32px;max-width:1440px;margin:0 auto}
 .page.active{display:block}
@@ -179,6 +179,61 @@ tbody tr:last-child td{border-bottom:none}
 .wz-res-title{font-size:12px;color:var(--g3);margin-bottom:12px;font-weight:600}
 .hazus-attr{text-align:center;padding:10px 24px;font-size:11px;color:#5A5660}
 </style></head><body>
+<header class="site-hd"><style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+.site-hd{background:#0f2350;border-bottom:1px solid rgba(255,255,255,.08);font-family:Inter,'Segoe UI',system-ui,sans-serif;flex-shrink:0;position:sticky;top:0;z-index:9999;box-shadow:0 4px 20px rgba(6,14,36,.18)}
+.site-hd::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(124,157,255,.55),transparent)}
+.site-hd .hd-in{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:14px 24px}
+.site-hd a{text-decoration:none;color:#fff;font-size:12.5px;font-weight:500;transition:opacity .15s;opacity:.9}
+.site-hd a:hover{opacity:1}
+.site-hd .hd-home{color:#fff;font-size:13.5px;font-weight:600;opacity:1}
+.site-hd .hd-links{display:flex;align-items:center;gap:16px}
+.site-hd .hd-dd{position:relative}
+.site-hd .hd-dd-btn{display:flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;font:500 12.5px Inter,'Segoe UI',system-ui,sans-serif;color:#fff;padding:6px 2px;transition:opacity .15s;opacity:.9}
+.site-hd .hd-dd-btn:hover,.site-hd .hd-dd.open .hd-dd-btn{opacity:1}
+.site-hd .hd-dd-btn.hd-on-btn{color:#9fc0ff;opacity:1}
+.site-hd .hd-dd-btn-ic{width:15px;height:15px;flex-shrink:0}
+.site-hd .hd-dd-btn-ic svg{width:100%;height:100%}
+.site-hd .hd-dd-btn svg.hd-chev{width:10px;height:10px;transition:transform .15s;flex-shrink:0;color:#fff}
+.site-hd .hd-dd.open .hd-dd-btn svg.hd-chev{transform:rotate(180deg)}
+.site-hd .hd-dd-menu{position:fixed;background:#1f3d78;border:1px solid rgba(255,255,255,.12);border-radius:12px;box-shadow:0 16px 40px rgba(0,0,0,.4);padding:8px;display:none;gap:2px;z-index:10000}
+.site-hd .hd-dd.open .hd-dd-menu{display:flex}
+.site-hd .hd-dd-menu a{display:flex;flex-direction:column;align-items:center;gap:7px;width:96px;padding:12px 8px;border-radius:8px;font-size:11px;color:#fff;font-weight:500;text-align:center;line-height:1.3;opacity:.92}
+.site-hd .hd-dd-menu a:hover{background:rgba(255,255,255,.1);opacity:1}
+.site-hd .hd-dd-menu a.hd-on{background:rgba(255,255,255,.16);opacity:1}
+.site-hd .hd-dd-menu a .hd-dd-ic{width:22px;height:22px}
+.site-hd .hd-dd-menu a .hd-dd-ic svg{width:100%;height:100%}
+.site-hd .hd-sep{color:rgba(255,255,255,.35);font-size:12px;user-select:none}
+.site-hd .hd-ic{display:inline-flex;color:#fff;opacity:.9}
+.site-hd .hd-ic:hover{opacity:1}
+.site-hd .hd-ic svg{width:17px;height:17px}
+@media(max-width:680px){.site-hd .hd-in{padding:11px 14px}.site-hd .hd-links{gap:12px}.site-hd a,.site-hd .hd-dd-btn{font-size:11.5px}.site-hd .hd-sep{display:none}.site-hd .hd-dd-menu{padding:6px;flex-wrap:wrap;max-width:calc(100vw - 28px)}.site-hd .hd-dd-menu a{width:84px}}
+</style><div class="hd-in"><a class="hd-home" href="/">Home</a><nav class="hd-links"><div class="hd-dd" id="hdDd"><button class="hd-dd-btn" id="hdDdBtn" type="button">Tools<svg class="hd-chev" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="hd-dd-menu"><a href="/earthquake-rupture/"><span class="hd-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></span>Fault Mechanism</a><a href="/world-faults/"><span class="hd-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.7 2.6 4 5.6 4 9s-1.3 6.4-4 9c-2.7-2.6-4-5.6-4-9s1.3-6.4 4-9z"/></svg></span>Global Faults & Live Earthquakes</a><a href="/earthquake-dashboard/"><span class="hd-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5-7 5 14 2.5-7h4"/></svg></span>Rapid Earthquake Response</a><a href="/rc-section-designer/"><span class="hd-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9"><rect x="4.5" y="5" width="15" height="14" rx="1.5"/><circle cx="9" cy="9.5" r="1.1" fill="#fff" stroke="none"/><circle cx="15" cy="9.5" r="1.1" fill="#fff" stroke="none"/><circle cx="9" cy="14.5" r="1.1" fill="#fff" stroke="none"/><circle cx="15" cy="14.5" r="1.1" fill="#fff" stroke="none"/></svg></span>Reinforced Concrete Section Designer</a><a href="/hazus/"><span class="hd-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18M5 18V9l4-4 4 4v9M13 18v-6l3-3 3 3v6"/></svg></span>Vulnerability Explorer</a></div></div><span class="hd-sep">|</span><a href="/contact/">Contact</a><span class="hd-sep">|</span><a class="hd-ic" href="https://www.youtube.com/@Structural.Analysis" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M10.3 9.4v5.2l4.6-2.6-4.6-2.6z" fill="currentColor"/></svg></a><a class="hd-ic" href="https://www.linkedin.com/in/arashnassirpour/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V17M8 7.2v.1M12 17v-3.7c0-1.3.9-2.3 2.2-2.3 1.3 0 2.3 1 2.3 2.3V17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a></nav></div>
+<script>
+(function(){
+  var dd = document.getElementById('hdDd');
+  var btn = document.getElementById('hdDdBtn');
+  var menu = dd ? dd.querySelector('.hd-dd-menu') : null;
+  if(!dd||!btn||!menu) return;
+  function positionMenu(){
+    var r = btn.getBoundingClientRect();
+    menu.style.top = (r.bottom + 10) + 'px';
+    var left = r.right - menu.offsetWidth;
+    if (left < 10) left = 10;
+    menu.style.left = left + 'px';
+  }
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    dd.classList.toggle('open');
+    if (dd.classList.contains('open')) positionMenu();
+  });
+  document.addEventListener('click', function(){ dd.classList.remove('open'); });
+  window.addEventListener('resize', function(){ if (dd.classList.contains('open')) positionMenu(); });
+  window.addEventListener('scroll', function(){ if (dd.classList.contains('open')) positionMenu(); }, true);
+  menu.addEventListener('click', function(e){ e.stopPropagation(); });
+})();
+</script>
+</header>
 <div class="toast" id="toast"></div>
 <div class="topbar">
   <div class="brand">Vulnerability <span>Explorer</span></div>
@@ -827,7 +882,7 @@ tbody tr:last-child td{border-bottom:none}
       Compare mode &mdash; overlay a second typology on the chart
     </label>
     <div class="cmp2-wrap" id="esrm-cmp2-wrap">
-      <div class="cmp2-label"><span class="cmp2-badge">2</span>Curve 2 &mdash; independent selection <span id="esrm-imt2-note" style="font-size:11px;color:#9fc0ff;margin-left:8px;font-weight:400"></span></div>
+      <div class="cmp2-label"><span class="cmp2-badge">2</span>Curve 2 &mdash; independent selection <span id="esrm-imt2-note" style="font-size:11px;color:#99f6e4;margin-left:8px;font-weight:400"></span></div>
       <div class="cmp2-grid">
         <div class="fg"><label>Material</label><div class="hint">Construction material</div>
           <select id="esrm-mat2" onchange="esrmFilter2()"><option value="">All materials</option></select></div>
@@ -1015,7 +1070,7 @@ tbody tr:last-child td{border-bottom:none}
         get_flood_js() + '\n' +
         get_wind_js()  + '\n' +
         get_eq_js()    +
-        '\n</script>\n</body>\n</html>'
+        '\n</script>\n' + '<footer class="site-ft"><style>\n.site-ft{background:#0f2350;border-top:1px solid rgba(255,255,255,.08);flex-shrink:0;font-family:Inter,\'Segoe UI\',system-ui,sans-serif}\n.site-ft .ft-in{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:14px 24px}\n.site-ft .ft-copy{font-size:11.5px;color:#fff}\n.site-ft .ft-links{display:flex;align-items:center;gap:16px}\n.site-ft .ft-links a{text-decoration:none;color:#fff;font-size:11.5px;font-weight:500;transition:color .15s;opacity:.85}\n.site-ft .ft-links a:hover{opacity:1}\n.site-ft .ft-ic{display:inline-flex;color:#fff;opacity:.85}\n.site-ft .ft-ic:hover{opacity:1}\n.site-ft .ft-ic svg{width:15px;height:15px}\n@media(max-width:520px){.site-ft .ft-in{justify-content:center;text-align:center}}\n</style><div class="ft-in"><span class="ft-copy">&copy; 2026 Arash Nassirpour. All rights reserved.</span><nav class="ft-links"><a href="/contact/">Contact</a><a class="ft-ic" href="https://www.youtube.com/@Structural.Analysis" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M10.3 9.4v5.2l4.6-2.6-4.6-2.6z" fill="currentColor"/></svg></a><a class="ft-ic" href="https://www.linkedin.com/in/arashnassirpour/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V17M8 7.2v.1M12 17v-3.7c0-1.3.9-2.3 2.2-2.3 1.3 0 2.3 1 2.3 2.3V17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a></nav></div></footer>' + '\n</body>\n</html>'
     )
 
     return ''.join(parts) + data_script + js_block
