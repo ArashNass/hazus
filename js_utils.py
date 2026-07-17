@@ -2,7 +2,7 @@ def get_utils_js():
     return r"""
 const G=9.80665,GF=1.28;
 const C1F='#0d9488',C1W='#0f766e',C2='#c900ac';
-const WC={slight:'#1A7340',moderate:'#C47D00',extensive:'#C0321A',complete:'#48086F'};
+const WC={slight:'#1A7340',moderate:'#C47D00',extensive:'#C0321A',complete:'#334155'};
 const OCC={RES1:'Single family home',RES2:'Mobile home',RES3:'Multi-family',RES4:'Hotel/motel',
   RES5:'Dormitory',RES6:'Nursing home',COM1:'Retail trade',COM2:'Wholesale trade',
   COM3:'Personal services',COM4:'Professional services',COM5:'Banks/financial',COM6:'Hospital',
@@ -86,18 +86,18 @@ function mkChart(id,labels,datasets,xTitle,yTitle,existing){
               return ' '+ctx.dataset.label+': '+(ctx.parsed.y*100).toFixed(2)+'%';
             }
           },
-          backgroundColor:'rgba(72,8,111,.92)',
+          backgroundColor:'rgba(15,118,110,.92)',
           titleColor:'#fff',bodyColor:'#fff',
-          borderColor:'#C89FDC',borderWidth:1,
+          borderColor:'#5eead4',borderWidth:1,
           padding:10,cornerRadius:6
         }
       },
       scales:{
-        x:{title:{display:true,text:xTitle,font:{size:12,weight:'600'},color:'#48086F'},
-           ticks:{maxTicksLimit:12,color:'#5A5660'},grid:{color:'#EDE6F4'}},
-        y:{title:{display:true,text:yTitle,font:{size:12,weight:'600'},color:'#48086F'},
+        x:{title:{display:true,text:xTitle,font:{size:12,weight:'600'},color:'#0f766e'},
+           ticks:{maxTicksLimit:12,color:'#5A5660'},grid:{color:'#e6f4f1'}},
+        y:{title:{display:true,text:yTitle,font:{size:12,weight:'600'},color:'#0f766e'},
            min:0,max:1,ticks:{callback:function(v){return(v*100).toFixed(0)+'%';},color:'#5A5660'},
-           grid:{color:'#EDE6F4'}}
+           grid:{color:'#e6f4f1'}}
       },
       hover:{mode:'index',intersect:false},
       animation:{duration:200}}
@@ -118,7 +118,7 @@ function exportPNG(canvasId, titleId) {
   ctx.fillRect(0,0,exp.width,exp.height);
   if(title){
     ctx.font = '600 13px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif';
-    ctx.fillStyle = '#48086F';
+    ctx.fillStyle = '#0f766e';
     ctx.fillText(title.slice(0,120), 12, 26);
     ctx.drawImage(canvas,0,40);
   } else {

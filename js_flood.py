@@ -70,7 +70,7 @@ function flRenderChart(){
   var ft=flUM==='ft';
   var labels=flR1.depth_m.map(function(x){return ft?(x/0.3048).toFixed(1):x.toFixed(2);});
   var ds=[{label:'C1',data:flR1.damage,borderColor:C1F,
-    backgroundColor:flCmp&&flR2?'transparent':'rgba(127,53,178,.08)',
+    backgroundColor:flCmp&&flR2?'transparent':'rgba(13,148,136,.08)',
     borderWidth:2.5,pointRadius:0,pointBackgroundColor:C1F,tension:.3,fill:!(flCmp&&flR2)}];
   if(flCmp&&flR2){
     ds.push({label:'C2',data:flR2.damage,borderColor:C2,

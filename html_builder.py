@@ -31,7 +31,7 @@ def build_html(flood_json: str, wind_json: str, eq_json: str, gem_json: str = '[
   --onyx:#2F2C31;--onyx2:#5A5660;--onyx3:#949096;
   --bg:#FFFFFF;--bg2:#f4f6fb;--bg3:#e6f4f1;--border:#d7e6e3;
   --r:7px;--rl:12px;
-  --slight:#1A7340;--moderate:#C47D00;--extensive:#C0321A;--complete:#48086F;
+  --slight:#1A7340;--moderate:#C47D00;--extensive:#C0321A;--complete:#334155;
 }
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
      background:var(--bg2);color:var(--onyx);font-size:14px;min-height:100vh}

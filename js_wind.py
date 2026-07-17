@@ -72,7 +72,7 @@ function wiRenderChart(){
   else if(wiSM==='mph'){labs=wiR1.wind_ms.map(function(x){return u1?((x/GF)*2.237).toFixed(0):(x*2.237).toFixed(0);});xT=(u1?'1-minute sustained':'3-second peak gust')+' wind speed (mph)';}
   else{labs=wiR1.wind_ms.map(function(x){return u1?(x/GF).toFixed(1):x.toFixed(0);});xT=(u1?'1-minute sustained':'3-second peak gust')+' wind speed (m/s)';}
   var ds=[{label:'C1',data:wiR1.damage,borderColor:C1W,
-    backgroundColor:wiCmp&&wiR2?'transparent':'rgba(72,8,111,.08)',
+    backgroundColor:wiCmp&&wiR2?'transparent':'rgba(15,118,110,.08)',
     borderWidth:2.5,pointRadius:0,pointBackgroundColor:C1W,tension:.3,fill:!(wiCmp&&wiR2)}];
   if(wiCmp&&wiR2){
     ds.push({label:'C2',data:wiR2.damage,borderColor:C2,
