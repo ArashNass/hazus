@@ -26,7 +26,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--onyx);-webk
 /* NAV */
 .topbar{background:#0d9488;padding:0 32px;display:flex;align-items:center;
         height:58px;position:sticky;top:0;z-index:100;
-        box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);overflow-x:auto}
+        box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);overflow-x:auto;margin-top:26px}
 .brand{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.3px;margin-right:28px;white-space:nowrap;flex-shrink:0}
 .brand span{color:#99f6e4}
 .nav-tabs{display:flex;height:100%;align-items:center;gap:2px;flex:1}
