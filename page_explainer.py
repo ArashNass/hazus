@@ -47,7 +47,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--onyx);-webk
         line-height:1.6;text-align:left}
 
 /* PAGE — same max-width and padding as dashboard */
-.page{max-width:1440px;margin:0 auto;padding:28px 32px 80px}
+.page{max-width:1440px;margin:0 auto;padding:28px 32px 20px}
 
 h2{font-size:18px;font-weight:700;color:var(--deep);margin:36px 0 14px;letter-spacing:-.3px}
 h2:first-of-type{margin-top:0}
@@ -72,7 +72,7 @@ p{font-size:15px;color:var(--g2);line-height:1.7;margin-bottom:16px}
 .arr{transition:transform .2s;color:var(--wtw);flex-shrink:0}
 .arr.open{transform:rotate(180deg)}
 
-footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;border-top:1px solid var(--border);margin-top:40px}
+footer{text-align:center;padding:16px 32px;font-size:12px;color:#5A5660;border-top:1px solid var(--border);margin-top:16px}
 
 @media(max-width:900px){
   .features{grid-template-columns:repeat(2,1fr)}
