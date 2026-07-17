@@ -1,7 +1,7 @@
 def get_utils_js():
     return r"""
 const G=9.80665,GF=1.28;
-const C1F='#7F35B2',C1W='#48086F',C2='#c900ac';
+const C1F='#0d9488',C1W='#0f766e',C2='#c900ac';
 const WC={slight:'#1A7340',moderate:'#C47D00',extensive:'#C0321A',complete:'#48086F'};
 const OCC={RES1:'Single family home',RES2:'Mobile home',RES3:'Multi-family',RES4:'Hotel/motel',
   RES5:'Dormitory',RES6:'Nursing home',COM1:'Retail trade',COM2:'Wholesale trade',

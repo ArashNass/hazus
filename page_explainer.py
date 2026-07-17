@@ -37,22 +37,22 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--onyx);-webk
 
 /* HERO */
 .hero{background:linear-gradient(150deg,#0d9488 0%,#042f2e 100%);
-      padding:64px 32px 56px;text-align:center}
-.hero h1{font-size:clamp(32px,5vw,52px);font-weight:800;color:#fff;
-         line-height:1.15;letter-spacing:-1px;margin-bottom:16px}
+      padding:40px 32px 34px;text-align:center}
+.hero h1{font-size:clamp(24px,3.4vw,34px);font-weight:800;color:#fff;
+         line-height:1.15;letter-spacing:-.5px;margin-bottom:10px}
 .hero h1 span{color:#99f6e4}
-.hero p{font-size:16px;color:rgba(255,255,255,.65);max-width:580px;
-        margin:0 auto;line-height:1.65}
+.hero p{font-size:14px;color:rgba(255,255,255,.68);max-width:560px;
+        margin:0 auto;line-height:1.6}
 
 /* PAGE — same max-width and padding as dashboard */
 .page{max-width:1440px;margin:0 auto;padding:28px 32px 80px}
 
-h2{font-size:20px;font-weight:700;color:var(--deep);margin:48px 0 16px;letter-spacing:-.3px}
+h2{font-size:18px;font-weight:700;color:var(--deep);margin:36px 0 14px;letter-spacing:-.3px}
 h2:first-of-type{margin-top:0}
 p{font-size:15px;color:var(--g2);line-height:1.7;margin-bottom:16px}
 
 /* SOURCE CARDS — 4 columns to match dashboard layout */
-.sources{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:24px 0}
+.sources{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,320px));gap:14px;margin:24px 0}
 .src{background:var(--bg2);border:1px solid var(--border);border-radius:10px;
      padding:20px;border-top:3px solid}
 .src.hazus{border-top-color:#0d9488}
@@ -64,7 +64,7 @@ p{font-size:15px;color:var(--g2);line-height:1.7;margin-bottom:16px}
 .src-meta span{display:block;margin-top:2px}
 
 /* FEATURE TILES */
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:24px 0}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
 .feat{background:var(--bg2);border:1px solid var(--border);border-radius:8px;
       padding:14px 16px;font-size:14px;color:var(--g2);display:flex;gap:10px;align-items:flex-start}
 .feat svg{flex-shrink:0;margin-top:2px}
@@ -77,7 +77,7 @@ p{font-size:15px;color:var(--g2);line-height:1.7;margin-bottom:16px}
        padding:14px 18px;background:none;border:none;cursor:pointer;
        display:flex;justify-content:space-between;align-items:center;gap:12px}
 .faq-q:hover{background:var(--light)}
-.faq-a{font-size:13px;color:var(--g2);line-height:1.65;padding:0 18px 14px;display:none}
+.faq-a{font-size:13px;color:var(--g2);line-height:1.65;padding:2px 22px 18px;margin-top:-4px;display:none}
 .faq-a.open{display:block}
 .arr{transition:transform .2s;color:var(--wtw);flex-shrink:0}
 .arr.open{transform:rotate(180deg)}
@@ -86,6 +86,7 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
 
 @media(max-width:900px){
   .sources{grid-template-columns:repeat(2,1fr)}
+  .features{grid-template-columns:repeat(2,1fr)}
   .page{padding:24px 20px 60px}
 }
 @media(max-width:600px){

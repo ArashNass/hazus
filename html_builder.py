@@ -371,7 +371,7 @@ tbody tr:last-child td{border-bottom:none}
       <div class="card" style="margin-bottom:14px"><div class="meta-grid" id="fl-meta"></div></div>
       <div class="card">
         <div class="tbl-tabs" id="fl-tbl-tabs" style="display:none">
-          <button class="tbl-tab active" onclick="flShowTbl(1,this)"><span class="dot" style="background:#7F35B2"></span>Curve 1</button>
+          <button class="tbl-tab active" onclick="flShowTbl(1,this)"><span class="dot" style="background:#0d9488"></span>Curve 1</button>
           <button class="tbl-tab" onclick="flShowTbl(2,this)"><span class="dot" style="background:#c900ac"></span>Curve 2</button>
         </div>
         <div class="tbl-hdr-row">
@@ -469,7 +469,7 @@ tbody tr:last-child td{border-bottom:none}
       <div class="card" style="margin-bottom:14px"><div class="meta-grid" id="wi-meta"></div></div>
       <div class="card">
         <div class="tbl-tabs" id="wi-tbl-tabs" style="display:none">
-          <button class="tbl-tab active" onclick="wiShowTbl(1,this)"><span class="dot" style="background:#48086F"></span>Curve 1</button>
+          <button class="tbl-tab active" onclick="wiShowTbl(1,this)"><span class="dot" style="background:#0f766e"></span>Curve 1</button>
           <button class="tbl-tab" onclick="wiShowTbl(2,this)"><span class="dot" style="background:#c900ac"></span>Curve 2</button>
         </div>
         <div class="tbl-hdr-row">
@@ -579,7 +579,7 @@ tbody tr:last-child td{border-bottom:none}
       <div class="card" style="margin-bottom:14px"><div class="meta-grid" id="eq-meta"></div></div>
       <div class="card">
         <div class="tbl-tabs" id="eq-tbl-tabs" style="display:none">
-          <button class="tbl-tab active" onclick="eqShowTbl(1,this)"><span class="dot" style="background:#48086F"></span>Curve 1</button>
+          <button class="tbl-tab active" onclick="eqShowTbl(1,this)"><span class="dot" style="background:#0f766e"></span>Curve 1</button>
           <button class="tbl-tab" onclick="eqShowTbl(2,this)"><span class="dot" style="background:#c900ac"></span>Curve 2</button>
         </div>
         <div class="tbl-hdr-row">
@@ -918,7 +918,7 @@ tbody tr:last-child td{border-bottom:none}
       <div class="card" style="margin-bottom:14px"><div class="meta-grid" id="esrm-meta" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr))"></div></div>
       <div class="card">
         <div class="tbl-tabs" id="esrm-tbl-tabs" style="display:none">
-          <button class="tbl-tab active" onclick="esrmShowTbl(1,this)"><span class="dot" style="background:#48086F"></span>Curve 1</button>
+          <button class="tbl-tab active" onclick="esrmShowTbl(1,this)"><span class="dot" style="background:#0f766e"></span>Curve 1</button>
           <button class="tbl-tab" onclick="esrmShowTbl(2,this)"><span class="dot" style="background:#c900ac"></span>Curve 2</button>
         </div>
         <div class="tbl-hdr-row"><span class="tbl-label">Data values</span>
@@ -993,7 +993,7 @@ tbody tr:last-child td{border-bottom:none}
       <div class="card">
         <div class="cmp-legend" id="ci-cmp-leg" style="display:none"></div>
         <div class="tbl-tabs" id="ci-tbl-tabs" style="display:none">
-          <button class="tbl-tab active" onclick="ciShowTbl(1,this)"><span class="dot" style="background:#7F35B2"></span>Curve 1</button>
+          <button class="tbl-tab active" onclick="ciShowTbl(1,this)"><span class="dot" style="background:#0d9488"></span>Curve 1</button>
           <button class="tbl-tab" onclick="ciShowTbl(2,this)"><span class="dot" style="background:#c900ac"></span>Curve 2</button>
         </div>
         <div class="tbl-hdr-row"><span class="tbl-label">Data values</span>
