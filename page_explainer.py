@@ -26,7 +26,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--onyx);-webk
 /* NAV */
 .topbar{background:#0d9488;padding:0 32px;display:flex;align-items:center;
         height:58px;position:sticky;top:0;z-index:100;
-        box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);overflow-x:auto;margin-top:26px}
+        box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);overflow-x:auto;max-width:1440px;margin:26px auto 0;border-radius:12px}
 .brand{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.3px;margin-right:28px;white-space:nowrap;flex-shrink:0}
 .brand span{color:#99f6e4}
 .nav-tabs{display:flex;height:100%;align-items:center;gap:2px;flex:1}
@@ -37,8 +37,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--onyx);-webk
 
 /* HERO */
 .hero{background:linear-gradient(150deg,#0d9488 0%,#042f2e 100%);
-      padding:34px 32px}
-.hero-in{max-width:1440px;margin:0 auto;display:flex;align-items:center;
+      padding:30px 32px;max-width:1440px;margin:26px auto 0;border-radius:12px}
+.hero-in{display:flex;align-items:center;
       justify-content:space-between;gap:40px;flex-wrap:wrap}
 .hero h1{font-size:clamp(22px,2.6vw,30px);font-weight:800;color:#fff;
          line-height:1.15;letter-spacing:-.5px;flex-shrink:0}
@@ -77,9 +77,12 @@ footer{text-align:center;padding:16px 32px;font-size:12px;color:#5A5660;border-t
 @media(max-width:900px){
   .features{grid-template-columns:repeat(2,1fr)}
   .page{padding:24px 20px 60px}
+  .hero{padding:26px 20px}
+  .topbar{padding:0 20px}
 }
 @media(max-width:600px){
   .hero-in{flex-direction:column;align-items:flex-start;gap:14px}
+  .hero{padding:22px 16px}
   .topbar{padding:0 16px}
   .features{grid-template-columns:1fr}
 }

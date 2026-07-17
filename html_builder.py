@@ -35,7 +35,7 @@ def build_html(flood_json: str, wind_json: str, eq_json: str, gem_json: str = '[
 }
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
      background:var(--bg2);color:var(--onyx);font-size:14px;min-height:100vh}
-.topbar{background:#0d9488;padding:0 32px;display:flex;align-items:center;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);overflow-x:auto;margin-top:26px}
+.topbar{background:#0d9488;padding:0 32px;display:flex;align-items:center;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);overflow-x:auto;max-width:1440px;margin:26px auto 0;border-radius:12px}
 .brand{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.3px;margin-right:28px;white-space:nowrap;flex-shrink:0}
 .brand span{color:#99f6e4}
 .nav-tabs{display:flex;height:100%;align-items:center;gap:2px;flex:1}
@@ -43,7 +43,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,san
 .topbar{background:#0d9488;padding:0 32px;display:flex;align-items:center;
         height:56px;position:sticky;top:0;z-index:100;
         box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);
-        gap:0;overflow-x:auto;margin-top:26px}
+        gap:0;overflow-x:auto;max-width:1440px;margin:26px auto 0;border-radius:12px}
         box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);
         gap:0;overflow-x:auto}
 .brand{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.3px;margin-right:28px;white-space:nowrap;flex-shrink:0}
