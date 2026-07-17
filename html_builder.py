@@ -1005,8 +1005,7 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
 
     parts.append('''
 <footer>
-  <p>&copy; 2026 Arash Nassirpour. All rights reserved.</p>
-  <p style="margin-top:6px;font-size:11px;opacity:.6">
+  <p style="font-size:11px;opacity:.6">
     Powered by FEMA HAZUS 6.1 (public domain)
   </p>
 </footer>''')
