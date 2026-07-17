@@ -181,7 +181,7 @@ tbody tr:last-child td{border-bottom:none}
 .wz-go:hover{opacity:.85}
 .wz-none{color:var(--g3);font-size:14px;padding:32px 0;text-align:center}
 .wz-res-title{font-size:12px;color:var(--g3);margin-bottom:12px;font-weight:600}
-footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;border-top:1px solid var(--border);margin-top:40px}
+.hazus-attr{text-align:center;padding:10px 24px;font-size:11px;color:#5A5660}
 </style></head><body>
 <div class="toast" id="toast"></div>
 <div class="topbar">
@@ -1004,10 +1004,8 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
 </div>''')
 
     parts.append('''
-<footer>
-  <p style="font-size:11px;opacity:.6">
-    Powered by FEMA HAZUS 6.1 (public domain)
-  </p>
+<footer class="hazus-attr">
+  <p>Powered by FEMA HAZUS 6.1 (public domain)</p>
 </footer>''')
 
     # Data injection
