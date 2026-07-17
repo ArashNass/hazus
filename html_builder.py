@@ -1007,12 +1007,7 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
 <footer>
   <p>&copy; 2026 Arash Nassirpour. All rights reserved.</p>
   <p style="margin-top:6px;font-size:11px;opacity:.6">
-    FEMA HAZUS 6.1 (public domain) &middot;
-    GEM Global Vulnerability Model, Martins &amp; Silva (2023) (CC BY-NC-SA 4.0) &middot;
-    JRC Global Flood Depth-Damage Functions, Huizinga et al. (2017) (CC BY 4.0) &middot;
-    ETRiS Tsunami Vulnerability Curves, Jalayer et al. (2023) (CC BY 4.0) &middot;
-    CI Physical Vulnerability Database, Nirandjan et al. (2024) (CC BY 4.0) &middot;
-    ESRM20, Crowley et al. (2021) (CC BY 4.0)
+    Powered by FEMA HAZUS 6.1 (public domain)
   </p>
 </footer>''')
 
