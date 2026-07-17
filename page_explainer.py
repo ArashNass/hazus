@@ -37,12 +37,14 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--onyx);-webk
 
 /* HERO */
 .hero{background:linear-gradient(150deg,#0d9488 0%,#042f2e 100%);
-      padding:40px 32px 34px;text-align:center}
-.hero h1{font-size:clamp(24px,3.4vw,34px);font-weight:800;color:#fff;
-         line-height:1.15;letter-spacing:-.5px;margin-bottom:10px}
+      padding:34px 32px}
+.hero-in{max-width:1440px;margin:0 auto;display:flex;align-items:center;
+      justify-content:space-between;gap:40px;flex-wrap:wrap}
+.hero h1{font-size:clamp(22px,2.6vw,30px);font-weight:800;color:#fff;
+         line-height:1.15;letter-spacing:-.5px;flex-shrink:0}
 .hero h1 span{color:#99f6e4}
-.hero p{font-size:14px;color:rgba(255,255,255,.68);max-width:560px;
-        margin:0 auto;line-height:1.6}
+.hero p{font-size:14px;color:rgba(255,255,255,.72);max-width:520px;
+        line-height:1.6;text-align:left}
 
 /* PAGE — same max-width and padding as dashboard */
 .page{max-width:1440px;margin:0 auto;padding:28px 32px 80px}
@@ -50,18 +52,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--onyx);-webk
 h2{font-size:18px;font-weight:700;color:var(--deep);margin:36px 0 14px;letter-spacing:-.3px}
 h2:first-of-type{margin-top:0}
 p{font-size:15px;color:var(--g2);line-height:1.7;margin-bottom:16px}
-
-/* SOURCE CARDS — 4 columns to match dashboard layout */
-.sources{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,320px));gap:14px;margin:24px 0}
-.src{background:var(--bg2);border:1px solid var(--border);border-radius:10px;
-     padding:20px;border-top:3px solid}
-.src.hazus{border-top-color:#0d9488}
-.src-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
-.src.hazus .src-label{color:#0d9488}
-.src h3{font-size:14px;font-weight:700;color:var(--deep);margin-bottom:8px}
-.src p{font-size:13px;color:var(--g2);margin-bottom:10px;line-height:1.55}
-.src-meta{font-size:11px;color:var(--g3)}
-.src-meta span{display:block;margin-top:2px}
 
 /* FEATURE TILES */
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
@@ -77,7 +67,7 @@ p{font-size:15px;color:var(--g2);line-height:1.7;margin-bottom:16px}
        padding:14px 18px;background:none;border:none;cursor:pointer;
        display:flex;justify-content:space-between;align-items:center;gap:12px}
 .faq-q:hover{background:var(--light)}
-.faq-a{font-size:13px;color:var(--g2);line-height:1.65;padding:2px 22px 18px;margin-top:-4px;display:none}
+.faq-a{font-size:13px;color:var(--g2);line-height:1.65;padding:14px 18px 18px;border-top:1px solid var(--border);display:none}
 .faq-a.open{display:block}
 .arr{transition:transform .2s;color:var(--wtw);flex-shrink:0}
 .arr.open{transform:rotate(180deg)}
@@ -85,12 +75,11 @@ p{font-size:15px;color:var(--g2);line-height:1.7;margin-bottom:16px}
 footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;border-top:1px solid var(--border);margin-top:40px}
 
 @media(max-width:900px){
-  .sources{grid-template-columns:repeat(2,1fr)}
   .features{grid-template-columns:repeat(2,1fr)}
   .page{padding:24px 20px 60px}
 }
 @media(max-width:600px){
-  .sources{grid-template-columns:1fr}
+  .hero-in{flex-direction:column;align-items:flex-start;gap:14px}
   .topbar{padding:0 16px}
   .features{grid-template-columns:1fr}
 }
@@ -165,24 +154,13 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
 </div>
 
 <div class="hero">
-  <h1>Vulnerability Function<br><span>Explorer</span></h1>
-  <p>A vulnerability function converts hazard intensity into a damage ratio &mdash; the economic engine of every catastrophe model. This tool gives direct access to FEMA Hazus 6.1, covering flood, wind and earthquake vulnerability.</p>
+  <div class="hero-in">
+    <h1>Vulnerability Function<br><span>Explorer</span></h1>
+    <p>A vulnerability function converts hazard intensity into a damage ratio &mdash; the economic engine of every catastrophe model. This tool gives direct access to FEMA Hazus 6.1, covering flood, wind and earthquake vulnerability.</p>
+  </div>
 </div>
 
 <div class="page">
-
-<h2>Data source</h2>
-<div class="sources">
-  <div class="src hazus">
-    <div class="src-label">HAZUS</div>
-    <h3>FEMA Hazus 6.1</h3>
-    <p>US standard for natural hazard loss estimation. Depth-damage functions for flood, damage functions for wind and hurricane, and lognormal fragility curves for earthquake.</p>
-    <div class="src-meta">
-      <span>Flood &middot; Wind &middot; Earthquake</span>
-      <span>Public domain (FEMA)</span>
-    </div>
-  </div>
-</div>
 
 <h2>What you can do</h2>
 <div class="features">
