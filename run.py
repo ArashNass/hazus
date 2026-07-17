@@ -75,13 +75,33 @@ print("Importing modules...")
 from data_flood      import extract_flood
 from data_wind       import extract_wind
 from data_earthquake import EQ_DB
-from data_gem        import extract_gem, GEM_PGA
-from data_jrc        import extract_jrc
-from data_etris      import extract_etris
-from data_esrm       import extract_esrm
 from data_ci         import extract_ci
 from html_builder    import build_html
 from page_explainer  import build_explainer
+
+# Optional data sources - if their module isn't present in this checkout,
+# skip them gracefully rather than failing the whole build. build_html
+# already defaults each of these to an empty list.
+try:
+    from data_gem import extract_gem, GEM_PGA
+except ImportError:
+    print("  SKIP: data_gem.py not found")
+    extract_gem, GEM_PGA = None, {}
+try:
+    from data_jrc import extract_jrc
+except ImportError:
+    print("  SKIP: data_jrc.py not found")
+    extract_jrc = None
+try:
+    from data_etris import extract_etris
+except ImportError:
+    print("  SKIP: data_etris.py not found")
+    extract_etris = None
+try:
+    from data_esrm import extract_esrm
+except ImportError:
+    print("  SKIP: data_esrm.py not found")
+    extract_esrm = None
 print(f"  Imports done in {time.time()-t0:.1f}s")
 
 DASHBOARD = os.path.join(FOLDER, 'HAZUS_Dashboard.html')
@@ -193,8 +213,9 @@ print(f"  Saved: {INDEX}")
 
 t2 = time.time()
 print(f"\nTotal time: {t2-t0:.1f}s")
-print("Opening browser...")
-# Add timestamp to URL to force browser to reload fresh HTML (bypasses cache)
-import time as _time
-cache_bust = '?v=' + str(int(_time.time()))
-webbrowser.open('file:///' + INDEX.replace(os.sep, '/') + cache_bust)
+if not os.environ.get('CI'):
+    print("Opening browser...")
+    # Add timestamp to URL to force browser to reload fresh HTML (bypasses cache)
+    import time as _time
+    cache_bust = '?v=' + str(int(_time.time()))
+    webbrowser.open('file:///' + INDEX.replace(os.sep, '/') + cache_bust)

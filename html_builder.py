@@ -10,13 +10,9 @@ from js_utils import get_utils_js
 from js_flood import get_flood_js
 from js_wind  import get_wind_js
 from js_eq    import get_eq_js
-from js_gem   import get_gem_js
-from js_jrc   import get_jrc_js
-from js_etris  import get_etris_js
-from js_esrm   import get_esrm_js
-from js_ci     import get_ci_js
-from js_wizard import get_wizard_js
-from js_wizard  import get_wizard_js
+# NOTE: js_gem, js_jrc, js_etris, js_esrm, js_ci, js_wizard are not present
+# in this repo. Their tabs are removed from the nav below and their JS is
+# intentionally not imported or called anywhere in this file.
 
 def build_html(flood_json: str, wind_json: str, eq_json: str, gem_json: str = '[]', jrc_json: str = '[]', gem_pga_json: str = '[]', etris_json: str = '[]', esrm_json: str = '[]', ci_json: str = '[]') -> str:
     parts = []
@@ -188,17 +184,10 @@ tbody tr:last-child td{border-bottom:none}
   <div class="brand">Vulnerability <span>Explorer</span></div>
     <div class="nav-tabs">
     <a class="nav-tab" href="index.html">About</a>
-    <button class="nav-tab" onclick="show('wizard',this)" data-tab="wizard">Curve Finder</button>
     <div class="nav-sep"></div>
     <button class="nav-tab active" onclick="show('flood',this)" data-tab="flood">Flood Vulnerability</button>
     <button class="nav-tab" onclick="show('wind',this)" data-tab="wind">Wind Vulnerability</button>
     <button class="nav-tab" onclick="show('eq',this)" data-tab="eq">Earthquake Fragility</button>
-    <div class="nav-sep"></div>
-    <button class="nav-tab" onclick="show('gem',this)" data-tab="gem">GEM Global EQ</button>
-    <button class="nav-tab" onclick="show('esrm',this)" data-tab="esrm">ESRM20 Europe EQ</button>
-    <button class="nav-tab" onclick="show('jrc',this)" data-tab="jrc">JRC Global Flood</button>
-    <button class="nav-tab" onclick="show('etris',this)" data-tab="etris">ETRiS Tsunami</button>
-    <button class="nav-tab" onclick="show('ci',this)" data-tab="ci">Critical Infrastructure</button>
   </div>
 </div>
 ''')
@@ -1025,13 +1014,7 @@ tbody tr:last-child td{border-bottom:none}
         get_utils_js() + '\n' +
         get_flood_js() + '\n' +
         get_wind_js()  + '\n' +
-        get_eq_js()    + '\n' +
-        get_gem_js()   + '\n' +
-        get_jrc_js()   + '\n' +
-        get_etris_js()   + '\n' +
-        get_esrm_js()  + '\n' +
-        get_ci_js()    + '\n' +
-        get_wizard_js() +
+        get_eq_js()    +
         '\n</script>\n</body>\n</html>'
     )
 

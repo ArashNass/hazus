@@ -9,8 +9,8 @@ def build_explainer() -> str:
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Vulnerability Function Explorer — About</title>
-<meta name="description" content="Browse, compare and export building vulnerability functions from HAZUS, GEM, JRC and ETRiS. Flood, wind, earthquake and tsunami. Free, interactive.">
-<meta name="keywords" content="HAZUS vulnerability functions, depth damage functions, fragility curves, catastrophe modelling, GEM global vulnerability, JRC flood, ETRiS tsunami, FEMA HAZUS, insurance risk">
+<meta name="description" content="Browse, compare and export building vulnerability functions from FEMA Hazus. Flood, wind and earthquake. Free, interactive.">
+<meta name="keywords" content="HAZUS vulnerability functions, depth damage functions, fragility curves, catastrophe modelling, FEMA HAZUS, insurance risk">
 <meta name="author" content="Arash Nassirpour">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -107,28 +107,21 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
   <div class="brand">Vulnerability <span>Explorer</span></div>
     <div class="nav-tabs">
     <a class="nav-tab active" href="index.html">About</a>
-    <a class="nav-tab" href="HAZUS_Dashboard.html?tab=wizard">Curve Finder</a>
     <div class="nav-sep"></div>
     <a class="nav-tab" href="HAZUS_Dashboard.html?tab=flood">HAZUS Flood</a>
     <a class="nav-tab" href="HAZUS_Dashboard.html?tab=wind">HAZUS Wind</a>
     <a class="nav-tab" href="HAZUS_Dashboard.html?tab=eq">HAZUS Earthquake</a>
-    <div class="nav-sep"></div>
-    <a class="nav-tab" href="HAZUS_Dashboard.html?tab=gem">GEM Global EQ</a>
-    <a class="nav-tab" href="HAZUS_Dashboard.html?tab=esrm">ESRM20 Europe EQ</a>
-    <a class="nav-tab" href="HAZUS_Dashboard.html?tab=jrc">JRC Global Flood</a>
-    <a class="nav-tab" href="HAZUS_Dashboard.html?tab=etris">ETRiS Tsunami</a>
-    <a class="nav-tab" href="HAZUS_Dashboard.html?tab=ci">Critical Infrastructure</a>
   </div>
 </div>
 
 <div class="hero">
   <h1>Vulnerability Function<br><span>Explorer</span></h1>
-  <p>A vulnerability function converts hazard intensity into a damage ratio &mdash; the economic engine of every catastrophe model. This tool gives direct access to six open-source databases covering flood, wind, earthquake, tsunami, European seismic risk and critical infrastructure.</p>
+  <p>A vulnerability function converts hazard intensity into a damage ratio &mdash; the economic engine of every catastrophe model. This tool gives direct access to FEMA Hazus 6.1, covering flood, wind and earthquake vulnerability.</p>
 </div>
 
 <div class="page">
 
-<h2>Data sources</h2>
+<h2>Data source</h2>
 <div class="sources">
   <div class="src hazus">
     <div class="src-label">HAZUS</div>
@@ -137,51 +130,6 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
     <div class="src-meta">
       <span>Flood &middot; Wind &middot; Earthquake</span>
       <span>Public domain (FEMA)</span>
-    </div>
-  </div>
-  <div class="src gem">
-    <div class="src-label">GEM</div>
-    <h3>Global Earthquake Model</h3>
-    <p>Analytically derived vulnerability functions covering 3,500+ building typologies across 215 countries. The most comprehensive open global earthquake vulnerability dataset available.</p>
-    <div class="src-meta">
-      <span>Global earthquake &middot; 215 countries</span>
-      <span>CC BY-NC-SA 4.0 &middot; Martins &amp; Silva (2023)</span>
-    </div>
-  </div>
-  <div class="src esrm" style="border-top-color:#7C3AED">
-    <div class="src-label" style="color:#7C3AED">ESRM20</div>
-    <h3>European Seismic Risk Model 2020</h3>
-    <p>Lognormal fragility functions for 511 European building typologies. Four damage states (Slight, Moderate, Extensive, Complete) with the recommended intensity measure per typology.</p>
-    <div class="src-meta">
-      <span>European earthquake &middot; 511 typologies</span>
-      <span>CC BY 4.0 &middot; Crowley et al. (2021)</span>
-    </div>
-  </div>
-  <div class="src jrc">
-    <div class="src-label">JRC</div>
-    <h3>EU Joint Research Centre</h3>
-    <p>Globally consistent flood depth-damage curves for 5 asset classes across 6 continents. The standard reference for pan-European and global flood risk assessment.</p>
-    <div class="src-meta">
-      <span>Global flood &middot; 6 continents</span>
-      <span>CC BY 4.0 &middot; Huizinga et al. (2017)</span>
-    </div>
-  </div>
-  <div class="src etris">
-    <div class="src-label">ETRiS</div>
-    <h3>European Tsunami Risk Service</h3>
-    <p>Empirical vulnerability curves from six historical tsunami events including Japan 2011, Sri Lanka 2004, Chile 2010 and Sulawesi 2018. Three regression fits with percentile bands.</p>
-    <div class="src-meta">
-      <span>Tsunami &middot; 6 events</span>
-      <span>CC BY 4.0 &middot; Jalayer et al. (2023)</span>
-    </div>
-  </div>
-  <div class="src" style="border-top-color:#B45309">
-    <div class="src-label" style="color:#B45309">CI VULNERABILITY</div>
-    <h3>Critical Infrastructure (Nirandjan 2024)</h3>
-    <p>Fragility and vulnerability curves for energy, transport, water, waste, telecom and health &amp; education infrastructure across flood, earthquake, wind and landslide hazards. Covers 594 base curves with uncertainty bands.</p>
-    <div class="src-meta">
-      <span>594 curves &middot; 4 hazards &middot; 6 CI sectors</span>
-      <span>CC BY 4.0 &middot; Nirandjan et al. (2024), NHESS</span>
     </div>
   </div>
 </div>
@@ -232,7 +180,7 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
     <button class="faq-q" onclick="toggle(this)">Can I use HAZUS functions outside the US?
       <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
-    <div class="faq-a">With caution. HAZUS was calibrated on US construction stock. For international applications the GEM earthquake functions covering 215 countries and JRC flood functions covering 6 continents are more appropriate starting points.</div>
+    <div class="faq-a">With caution. HAZUS was calibrated on US construction stock, so results for other regions should be treated as an approximation and sanity-checked against local data where possible.</div>
   </div>
   <div class="faq-item">
     <button class="faq-q" onclick="toggle(this)">What wind speed convention does HAZUS use?
@@ -247,12 +195,7 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
 <footer>
   <p>&copy; 2026 Arash Nassirpour. All rights reserved.</p>
   <p style="margin-top:6px;font-size:11px;opacity:.6">
-    FEMA HAZUS 6.1 (public domain) &middot;
-    GEM Global Vulnerability Model, Martins &amp; Silva (2023) (CC BY-NC-SA 4.0) &middot;
-    JRC Global Flood Depth-Damage Functions, Huizinga et al. (2017) (CC BY 4.0) &middot;
-    ETRiS Tsunami Vulnerability Curves, Jalayer et al. (2023) (CC BY 4.0) &middot;
-    CI Physical Vulnerability Database, Nirandjan et al. (2024) (CC BY 4.0) &middot;
-    ESRM20, Crowley et al. (2021) (CC BY 4.0)
+    FEMA HAZUS 6.1 (public domain)
   </p>
 </footer>
 
