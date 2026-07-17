@@ -24,15 +24,15 @@ html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--onyx);-webkit-font-smoothing:antialiased}
 
 /* NAV */
-.topbar{background:#48086F;padding:0 32px;display:flex;align-items:center;
+.topbar{background:#0f2350;padding:0 32px;display:flex;align-items:center;
         height:58px;position:sticky;top:0;z-index:100;
         box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);overflow-x:auto}
 .brand{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.3px;margin-right:28px;white-space:nowrap;flex-shrink:0}
-.brand span{color:#C89FDC}
+.brand span{color:#9fc0ff}
 .nav-tabs{display:flex;height:100%;align-items:center;gap:2px;flex:1}
 .nav-tab{padding:0 18px;font-size:14px;font-weight:500;border:none;background:none;color:rgba(255,255,255,.55);cursor:pointer;border-bottom:3px solid transparent;transition:color .2s,border-color .2s;height:100%;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center;border-radius:0}
 .nav-tab:hover{color:rgba(255,255,255,.9);background:rgba(255,255,255,.04)}
-.nav-tab.active{color:#fff;border-bottom-color:#C89FDC;background:none;font-weight:600}
+.nav-tab.active{color:#fff;border-bottom-color:#9fc0ff;background:none;font-weight:600}
 .nav-sep{width:1px;height:18px;background:rgba(255,255,255,.15);margin:0 4px;flex-shrink:0}
 
 /* HERO */
@@ -40,7 +40,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--onyx);-webk
       padding:64px 32px 56px;text-align:center}
 .hero h1{font-size:clamp(32px,5vw,52px);font-weight:800;color:#fff;
          line-height:1.15;letter-spacing:-1px;margin-bottom:16px}
-.hero h1 span{color:#C89FDC}
+.hero h1 span{color:#9fc0ff}
 .hero p{font-size:16px;color:rgba(255,255,255,.65);max-width:580px;
         margin:0 auto;line-height:1.65}
 

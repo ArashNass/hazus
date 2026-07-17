@@ -39,23 +39,23 @@ def build_html(flood_json: str, wind_json: str, eq_json: str, gem_json: str = '[
 }
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
      background:var(--bg2);color:var(--onyx);font-size:14px;min-height:100vh}
-.topbar{background:#48086F;padding:0 32px;display:flex;align-items:center;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);overflow-x:auto}
+.topbar{background:#0f2350;padding:0 32px;display:flex;align-items:center;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);overflow-x:auto}
 .brand{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.3px;margin-right:28px;white-space:nowrap;flex-shrink:0}
-.brand span{color:#C89FDC}
+.brand span{color:#9fc0ff}
 .nav-tabs{display:flex;height:100%;align-items:center;gap:2px;flex:1}
 ── */
-.topbar{background:#48086F;padding:0 32px;display:flex;align-items:center;
+.topbar{background:#0f2350;padding:0 32px;display:flex;align-items:center;
         height:56px;position:sticky;top:0;z-index:100;
         box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);
         gap:0;overflow-x:auto}
         box-shadow:0 1px 0 rgba(255,255,255,.08),0 4px 16px rgba(0,0,0,.3);
         gap:0;overflow-x:auto}
 .brand{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.3px;margin-right:28px;white-space:nowrap;flex-shrink:0}
-.brand span{color:#C89FDC}
+.brand span{color:#9fc0ff}
 .nav-tabs{display:flex;height:100%;align-items:center;gap:2px;flex:1}
 .nav-tab{padding:0 18px;font-size:14px;font-weight:500;border:none;background:none;color:rgba(255,255,255,.55);cursor:pointer;border-bottom:3px solid transparent;transition:color .2s,border-color .2s;height:100%;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center;border-radius:0}
 .nav-tab:hover{color:rgba(255,255,255,.9);background:rgba(255,255,255,.04)}
-.nav-tab.active{color:#fff;border-bottom-color:#C89FDC;background:none;font-weight:600}
+.nav-tab.active{color:#fff;border-bottom-color:#9fc0ff;background:none;font-weight:600}
 .nav-sep{width:1px;height:18px;background:rgba(255,255,255,.15);margin:0 4px;flex-shrink:0}
 .page{display:none;padding:28px 32px;max-width:1440px;margin:0 auto}
 .page.active{display:block}
@@ -838,7 +838,7 @@ tbody tr:last-child td{border-bottom:none}
       Compare mode &mdash; overlay a second typology on the chart
     </label>
     <div class="cmp2-wrap" id="esrm-cmp2-wrap">
-      <div class="cmp2-label"><span class="cmp2-badge">2</span>Curve 2 &mdash; independent selection <span id="esrm-imt2-note" style="font-size:11px;color:#C89FDC;margin-left:8px;font-weight:400"></span></div>
+      <div class="cmp2-label"><span class="cmp2-badge">2</span>Curve 2 &mdash; independent selection <span id="esrm-imt2-note" style="font-size:11px;color:#9fc0ff;margin-left:8px;font-weight:400"></span></div>
       <div class="cmp2-grid">
         <div class="fg"><label>Material</label><div class="hint">Construction material</div>
           <select id="esrm-mat2" onchange="esrmFilter2()"><option value="">All materials</option></select></div>
