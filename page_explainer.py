@@ -150,9 +150,9 @@ footer{text-align:center;padding:16px 32px;font-size:12px;color:#5A5660;border-t
     <div class="nav-tabs">
     <a class="nav-tab active" href="index.html">About</a>
     <div class="nav-sep"></div>
-    <a class="nav-tab" href="HAZUS_Dashboard.html?tab=flood">HAZUS Flood</a>
-    <a class="nav-tab" href="HAZUS_Dashboard.html?tab=wind">HAZUS Wind</a>
-    <a class="nav-tab" href="HAZUS_Dashboard.html?tab=eq">HAZUS Earthquake</a>
+    <a class="nav-tab" href="HAZUS_Dashboard.html?tab=flood">Flood Vulnerability</a>
+    <a class="nav-tab" href="HAZUS_Dashboard.html?tab=wind">Wind Vulnerability</a>
+    <a class="nav-tab" href="HAZUS_Dashboard.html?tab=eq">Earthquake Fragility</a>
   </div>
 </div>
 
