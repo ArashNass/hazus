@@ -26,7 +26,7 @@ def build_html(flood_json: str, wind_json: str, eq_json: str, gem_json: str = '[
 <head>
 <meta charset="UTF-8">\n<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">\n<meta http-equiv="Pragma" content="no-cache">\n<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>HAZUS Vulnerability Function Explorer</title>
+<title>Vulnerability Function Explorer</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -190,9 +190,9 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
     <a class="nav-tab" href="index.html">About</a>
     <button class="nav-tab" onclick="show('wizard',this)" data-tab="wizard">Curve Finder</button>
     <div class="nav-sep"></div>
-    <button class="nav-tab active" onclick="show('flood',this)" data-tab="flood">HAZUS Flood</button>
-    <button class="nav-tab" onclick="show('wind',this)" data-tab="wind">HAZUS Wind</button>
-    <button class="nav-tab" onclick="show('eq',this)" data-tab="eq">HAZUS Earthquake</button>
+    <button class="nav-tab active" onclick="show('flood',this)" data-tab="flood">Flood Vulnerability</button>
+    <button class="nav-tab" onclick="show('wind',this)" data-tab="wind">Wind Vulnerability</button>
+    <button class="nav-tab" onclick="show('eq',this)" data-tab="eq">Earthquake Fragility</button>
     <div class="nav-sep"></div>
     <button class="nav-tab" onclick="show('gem',this)" data-tab="gem">GEM Global EQ</button>
     <button class="nav-tab" onclick="show('esrm',this)" data-tab="esrm">ESRM20 Europe EQ</button>
@@ -250,7 +250,7 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
     # ── FLOOD ──
     parts.append('''
 <div id="page-flood" class="page active">
-  <div class="page-title">Flood vulnerability functions</div>
+  <div class="page-title">Flood Vulnerability</div>
   <div class="page-sub">Hazus 6.1 &mdash; depth-damage vulnerability functions. Damage ratio (0 to 1) vs flood depth. Source: FEMA Hazus 6.1.</div>
   <div class="filters">
     <div class="fg"><label>Category</label><div class="hint">Broad building use type</div>
@@ -349,7 +349,7 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
     # ── WIND ──
     parts.append('''
 <div id="page-wind" class="page">
-  <div class="page-title">Wind / Hurricane vulnerability functions</div>
+  <div class="page-title">Wind Vulnerability</div>
   <div class="page-sub">Hazus 6.1 &mdash; 39 specific building types. Damage ratio vs wind speed. Native: 3-second peak gust at 10 m, open terrain. 1-minute derived using factor 1.28.</div>
   <div class="filters">
     <div class="fg"><label>Material</label><div class="hint">Construction material</div>
@@ -447,7 +447,7 @@ footer{text-align:center;padding:28px 32px 24px;font-size:12px;color:#5A5660;bor
     # ── EARTHQUAKE ──
     parts.append('''
 <div id="page-eq" class="page">
-  <div class="page-title">Earthquake vulnerability functions</div>
+  <div class="page-title">Earthquake Fragility</div>
   <div class="page-sub">Hazus-MH &mdash; lognormal fragility vulnerability functions. Probability of reaching each damage state vs PGA. Beta = 0.64. Source: Hazus-MH Technical Manual Table 5.16a-d.</div>
   <div class="filters">
     <div class="fg"><label>Material</label><div class="hint">Construction material</div>
