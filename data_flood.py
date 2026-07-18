@@ -1,5 +1,7 @@
 import pandas as pd
 
+from data_validate import validate_damage_curve, log_problems
+
 
 def extract_flood(path: str) -> list:
     print(f"  Reading flood: {path}")
@@ -10,18 +12,35 @@ def extract_flood(path: str) -> list:
     depth_m    = [round(int(c) * 0.3048, 2) for c in depth_cols]
 
     curves = []
+    excluded = 0
+    all_problems = []
+
     for _, row in df.iterrows():
         fn_id = row.get("FnID", "")
         if str(fn_id).strip() in ("", "nan"):
             continue
+        fn_id_out = int(fn_id) if str(fn_id).replace('.', '').isdigit() else str(fn_id)
 
+        # Parse every damage cell as-is; missing/invalid stays None, never 0.0.
         dmg_vals = []
         for c in depth_cols:
-            try:    dmg_vals.append(round(float(row[c]), 4))
-            except: dmg_vals.append(0.0)
+            raw = row[c]
+            try:
+                v = float(raw)
+                if v != v:  # NaN check without importing math/numpy here
+                    v = None
+            except (TypeError, ValueError):
+                v = None
+            dmg_vals.append(round(v, 4) if v is not None else None)
+
+        problems = validate_damage_curve(depth_m, dmg_vals, fn_id_out, "HAZUS_FLOOD_DAMAGE_REPORT")
+        if problems:
+            excluded += 1
+            all_problems.extend(problems)
+            continue
 
         curves.append({
-            "fn_id":       int(fn_id) if str(fn_id).replace('.', '').isdigit() else str(fn_id),
+            "fn_id":       fn_id_out,
             "occupancy":   str(row.get("Occupancy",   "")).strip(),
             "category":    str(row.get("Category",    "")).strip(),
             "description": str(row.get("Description", "")).strip(),
@@ -33,5 +52,7 @@ def extract_flood(path: str) -> list:
             "damage":      dmg_vals,
         })
 
-    print(f"    Flood: {len(curves)} vulnerability functions loaded")
+    log_problems(all_problems, "flood vulnerability functions")
+    print(f"    Flood: {len(curves)} vulnerability functions loaded"
+          + (f", {excluded} excluded (missing/invalid data \u2014 see warnings above)" if excluded else ""))
     return curves

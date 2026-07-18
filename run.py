@@ -76,6 +76,7 @@ from data_flood      import extract_flood
 from data_wind       import extract_wind
 from data_earthquake import EQ_DB
 from data_ci         import extract_ci
+from data_validate    import validate_eq_median_row, log_problems
 from html_builder    import build_html
 from page_explainer  import build_explainer
 
@@ -176,6 +177,15 @@ else:
 
 t1 = time.time()
 print(f"\nData extraction: {t1-t0:.1f}s")
+
+_eq_problems = []
+for _code, _row in EQ_DB.items():
+    _eq_problems.extend(validate_eq_median_row(_code, _row))
+log_problems(_eq_problems, "HAZUS EQ median PGA table (data_earthquake.py)")
+if _eq_problems:
+    print(f"  WARNING: {len(_eq_problems)} problem(s) found in the static EQ_DB table \u2014 "
+          f"see above. Building anyway; fix data_earthquake.py directly.")
+
 print("Summary:")
 print(f"  HAZUS flood  : {len(flood)} functions")
 print(f"  HAZUS wind   : {len(wind)} functions")

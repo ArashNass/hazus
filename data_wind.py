@@ -19,6 +19,8 @@ Licence: Apache 2.0
 import os
 import openpyxl
 
+from data_validate import validate_damage_curve, log_problems
+
 
 def extract_wind(path: str = None) -> list:
     if path is None:
@@ -59,14 +61,39 @@ def extract_wind(path: str = None) -> list:
     n_speeds = len(wind_ms)
 
     curves = []
+    excluded = 0
+    all_problems = []
+
     for row in rows[5:]:
         if not row[0] or not isinstance(row[0], str):
             continue
-        sbt  = str(row[0]).strip()
-        dmg  = [round(float(v), 4) if v is not None else 0.0
-                for v in row[7:7+n_speeds]]
-        if len(dmg) < n_speeds:
-            dmg += [0.0] * (n_speeds - len(dmg))
+        sbt = str(row[0]).strip()
+
+        # Parse every damage cell as-is; missing/short rows stay None, never 0.0.
+        raw_vals = list(row[7:7 + n_speeds]) + [None] * max(0, n_speeds - len(row[7:7 + n_speeds]))
+        dmg = []
+        for v in raw_vals:
+            try:
+                fv = float(v) if v is not None else None
+                if fv is not None and fv != fv:
+                    fv = None
+            except (TypeError, ValueError):
+                fv = None
+            dmg.append(round(fv, 4) if fv is not None else None)
+
+        damage_type = str(row[6]).strip() if row[6] else ''
+        is_ratio = damage_type in ('contents', 'structure')
+        # 'downtime' is a recovery-time/business-interruption metric, not a
+        # damage ratio (confirmed against the source: HAZUS wind downtime
+        # values legitimately go well above 1.0), so it must not be forced
+        # into a [0,1] damage-ratio check.
+        problems = validate_damage_curve(wind_ms, dmg, f"{sbt} ({damage_type or 'unknown'})",
+                                          "HAZUS_WIND_DAMAGE_REPORT",
+                                          hi=(1.0 if is_ratio else 50.0))
+        if problems:
+            excluded += 1
+            all_problems.extend(problems)
+            continue
 
         curves.append({
             'sbt':         sbt,
@@ -82,5 +109,7 @@ def extract_wind(path: str = None) -> list:
             'damage':      dmg,
         })
 
-    print(f'    Wind: {len(curves)} vulnerability functions loaded')
+    log_problems(all_problems, "wind vulnerability functions")
+    print(f'    Wind: {len(curves)} vulnerability functions loaded'
+          + (f', {excluded} excluded (missing/invalid data \u2014 see warnings above)' if excluded else ''))
     return curves

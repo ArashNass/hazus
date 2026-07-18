@@ -20,6 +20,8 @@ Cite: Nirandjan et al. (2024), NHESS, doi:10.5194/nhess-24-4341-2024
 import os, re
 import openpyxl
 
+from data_validate import validate_damage_curve, validate_ci_fragility_curve, log_problems
+
 CI_SYSTEM = {
     '1':'Energy','2':'Energy','3':'Energy','4':'Energy','5':'Energy','6':'Energy',
     '7':'Transport','8':'Transport','9':'Transport',
@@ -66,19 +68,29 @@ def _x_vals(data_rows):
     return xs
 
 def _y_col(data_rows, col, xs):
-    ys=[]
-    xi=0
+    """Returns (xs, ys) aligned 1:1 with the shared hazard axis. Missing or
+    invalid cells come back as None in ys \u2014 never dropped, never
+    zero-filled \u2014 so the caller's validation step can see exactly what
+    is wrong and decide whether to exclude the whole curve."""
+    ys = []
+    xi = 0
     for row in data_rows:
-        if row[0] is None: continue
-        try: float(row[0])
-        except: continue
-        try: y=float(row[col]) if row[col] is not None else None
-        except: y=None
-        ys.append(y)
-        xi+=1
-    # align with xs, filter None pairs
-    pairs=[(xs[i],ys[i]) for i in range(min(len(xs),len(ys))) if ys[i] is not None]
-    return [round(p[0],5) for p in pairs],[round(p[1],5) for p in pairs]
+        if row[0] is None:
+            continue
+        try:
+            float(row[0])
+        except (TypeError, ValueError):
+            continue
+        try:
+            y = float(row[col]) if row[col] is not None else None
+            if y is not None and y != y:  # NaN
+                y = None
+        except (TypeError, ValueError):
+            y = None
+        ys.append(round(y, 5) if y is not None else None)
+        xi += 1
+    n = min(len(xs), len(ys))
+    return [round(x, 5) for x in xs[:n]], ys[:n]
 
 def _parse_vuln_sheet(ws, hazard, im_label):
     rows=list(ws.iter_rows(values_only=True))
@@ -96,10 +108,12 @@ def _parse_vuln_sheet(ws, hazard, im_label):
             all_cols[i]=(cid,desc,char)
 
     base_curves={}
+    problems=[]
     for col,(cid,desc,char) in all_cols.items():
         bid=_base_id(cid); role=_is_bound(cid)
         cx,cy=_y_col(data_rows,col,xs_all)
-        if len(cx)<2: continue
+        if all(v is None for v in cy):
+            continue   # genuinely empty column (e.g. unused ID slot) — not a data-quality issue
         if role is None:
             if bid not in base_curves:
                 base_curves[bid]={'id':bid,'hazard':hazard,'curve_type':'Vulnerability',
@@ -123,7 +137,12 @@ def _parse_vuln_sheet(ws, hazard, im_label):
         if rec['y'] is None:
             if rec['y_lo'] is not None: rec['y']=rec['y_lo']
             else: continue
+        curve_problems = validate_damage_curve(rec['x'], rec['y'], bid, ws.title)
+        if curve_problems:
+            problems.extend(curve_problems)
+            continue
         result.append(rec)
+    log_problems(problems, f"{ws.title} vulnerability curves")
     return result
 
 
@@ -162,20 +181,19 @@ def _parse_frag_sheet(ws, hazard, im_label):
                     curve_cols[bid]['ds'][ds]=i
 
     result=[]
+    problems=[]
     for bid,info in curve_cols.items():
         if not info['ds']: continue
-        # Build DS arrays
+        # Build DS arrays — all share xs_all now that _y_col no longer drops points
         ds_data={}
         for ds_label,col in info['ds'].items():
             cx,cy=_y_col(data_rows,col,xs_all)
-            if len(cx)>=2:
+            if not all(v is None for v in cy):
                 ds_data[ds_label]={'x':cx,'y':cy}
         if not ds_data: continue
 
-        # Use the x from the first DS
-        first_ds=list(ds_data.values())[0]
         desc=info['desc']; char=info['char']
-        result.append({
+        candidate = {
             'id':        bid,
             'hazard':    hazard,
             'curve_type':'Fragility',
@@ -184,12 +202,22 @@ def _parse_frag_sheet(ws, hazard, im_label):
             'asset':     desc,
             'details':   char,
             'label':     desc+(' \u2014 '+char if char else ''),
-            'x':         first_ds['x'],
-            'y':         first_ds['y'],   # Slight = first DS (main curve for table)
+            'x':         xs_all,
+            'y':         None,
             'y_lo':      None,
             'y_hi':      None,
             'ds':        {k:v['y'] for k,v in ds_data.items()},
-        })
+        }
+        # "Slight" (or the first available DS) is the main curve for the table view.
+        first_label = next((l for l in DS_LABELS if l in candidate['ds']), list(candidate['ds'])[0])
+        candidate['y'] = candidate['ds'][first_label]
+
+        curve_problems = validate_ci_fragility_curve(candidate)
+        if curve_problems:
+            problems.extend(curve_problems)
+            continue
+        result.append(candidate)
+    log_problems(problems, f"{ws.title} fragility curves")
     return result
 
 
