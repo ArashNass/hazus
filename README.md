@@ -91,7 +91,7 @@ The validation suite covers unit cases and integration checks against the bundle
 
 ## Deployment
 
-GitHub Actions rebuilds the static pages from `main` and deploys them to GitHub Pages. The published project is served under the main site’s custom domain at:
+`run.py` builds the static pages from data already committed in this repository. The generated `index.html` and `HAZUS_Dashboard.html` are currently published from the `arashnass.github.io` hub repository rather than this repo's own GitHub Pages, so this repo is the source-of-truth codebase, not the live deployment target. The published project is served under the main site's custom domain at:
 
 https://arashnassirpour.com/hazus/
 
