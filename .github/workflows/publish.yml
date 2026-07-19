@@ -1,13 +1,12 @@
-# Builds the site (run.py) and publishes it to GitHub Pages on every push.
-# No live network calls at build time - everything is generated from files
-# already committed in this repo, so this is fast and has nothing to fail
-# on external APIs.
+# Builds the site (run.py). Deployment to this repo's own GitHub Pages is
+# currently DISABLED — the built site is instead published manually from
+# the arashnass.github.io hub repo. Auto-running this workflow on every push
+# would fail at the deploy step since there's no Pages target here, so it's
+# manual-only until/unless this repo's own Pages is re-enabled.
 
 name: Build and publish
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
