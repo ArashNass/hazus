@@ -1,9 +1,4 @@
-"""
-page_explainer.py — generates index.html (About / landing page)
-"""
-
-def build_explainer() -> str:
-    return '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -200,7 +195,7 @@ footer{text-align:center;padding:16px 32px;font-size:12px;color:#5A5660;border-t
     <button class="faq-q" onclick="toggle(this)">What is a vulnerability function?
       <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
-    <div class="faq-a">A mathematical relationship between hazard intensity (depth, speed, acceleration) and damage ratio, the fraction of a building\'s replacement value that is destroyed. Vulnerability functions are the economic engine of every catastrophe model.</div>
+    <div class="faq-a">A mathematical relationship between hazard intensity (depth, speed, acceleration) and damage ratio, the fraction of a building's replacement value that is destroyed. Vulnerability functions are the economic engine of every catastrophe model.</div>
   </div>
   <div class="faq-item">
     <button class="faq-q" onclick="toggle(this)">What is the difference between a vulnerability function and a fragility curve?
@@ -231,11 +226,11 @@ footer{text-align:center;padding:16px 32px;font-size:12px;color:#5A5660;border-t
 <script>
 function toggle(btn){
   var a=btn.nextElementSibling;
-  var arr=btn.querySelector(\'.arr\');
-  var open=a.classList.contains(\'open\');
-  document.querySelectorAll(\'.faq-a\').forEach(function(el){el.classList.remove(\'open\');});
-  document.querySelectorAll(\'.arr\').forEach(function(el){el.classList.remove(\'open\');});
-  if(!open){a.classList.add(\'open\');arr.classList.add(\'open\');}
+  var arr=btn.querySelector('.arr');
+  var open=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(function(el){el.classList.remove('open');});
+  document.querySelectorAll('.arr').forEach(function(el){el.classList.remove('open');});
+  if(!open){a.classList.add('open');arr.classList.add('open');}
 }
 </script>
 <footer class="site-ft"><style>
@@ -251,4 +246,4 @@ function toggle(btn){
 @media(max-width:520px){.site-ft .ft-in{justify-content:center;text-align:center}}
 </style><div class="ft-in"><span class="ft-copy">&copy; 2026 Arash Nassirpour. All rights reserved.</span><nav class="ft-links"><a href="/about/">About</a><a href="/contact/">Contact</a><a class="ft-ic" href="https://www.youtube.com/@Structural.Analysis" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M10.3 9.4v5.2l4.6-2.6-4.6-2.6z" fill="currentColor"/></svg></a><a class="ft-ic" href="https://www.linkedin.com/in/arashnassirpour/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V17M8 7.2v.1M12 17v-3.7c0-1.3.9-2.3 2.2-2.3 1.3 0 2.3 1 2.3 2.3V17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a></nav></div></footer>
 </body>
-</html>'''
+</html>
