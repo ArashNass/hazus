@@ -23,7 +23,17 @@ def build_html(flood_json: str, wind_json: str, eq_json: str, gem_json: str = '[
 <meta charset="UTF-8">\n<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">\n<meta http-equiv="Pragma" content="no-cache">\n<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%3E%3Crect%20width%3D%2724%27%20height%3D%2724%27%20rx%3D%275%27%20fill%3D%27%230f2350%27%2F%3E%3Cpath%20d%3D%27M3%2018h18M5%2018V9l4-4%204%204v9M13%2018v-6l3-3%203%203v6%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%271.9%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%2F%3E%3C%2Fsvg%3E">
-<title>Vulnerability Function Explorer</title>
+<title>Hazus Vulnerability Curves - Flood, Wind &amp; Earthquake | Arash Nassirpour</title>
+<meta name="description" content="Explore and compare FEMA Hazus flood depth-damage functions, wind vulnerability curves and earthquake fragility functions in an interactive dashboard.">
+<link rel="canonical" href="https://arashnassirpour.com/hazus/HAZUS_Dashboard.html">
+<meta name="author" content="Arash Nassirpour">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="Hazus Vulnerability Curves - Flood, Wind &amp; Earthquake">
+<meta property="og:description" content="Explore FEMA Hazus flood, wind and earthquake vulnerability functions in an interactive dashboard.">
+<meta property="og:url" content="https://arashnassirpour.com/hazus/HAZUS_Dashboard.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arash Nassirpour">
+<meta name="twitter:card" content="summary">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -249,7 +259,7 @@ tbody tr:last-child td{border-bottom:none}
 ''')
     parts.append('''
 <div id="page-wizard" class="page">
-  <div class="page-title">Curve Finder</div>
+  <h1 class="page-title">Hazus Vulnerability Curve Finder</h1>
   <div class="page-sub">Answer the questions below to find matching vulnerability and fragility functions. Click any result to open that database tab directly.</div>
 
   <div class="wz-section" id="wz-s1">
