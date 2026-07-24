@@ -154,6 +154,7 @@ footer{text-align:center;padding:16px 32px;font-size:12px;color:#5A5660;border-t
     <a class="nav-tab" href="HAZUS_Dashboard.html?tab=flood">Flood Vulnerability</a>
     <a class="nav-tab" href="HAZUS_Dashboard.html?tab=wind">Wind Vulnerability</a>
     <a class="nav-tab" href="HAZUS_Dashboard.html?tab=eq">Earthquake Fragility</a>
+    <a class="nav-tab" href="HAZUS_Dashboard.html?tab=util">Utility Fragility</a>
   </div>
 </div>
 
