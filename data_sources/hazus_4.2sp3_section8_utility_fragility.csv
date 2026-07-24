@@ -1,0 +1,180 @@
+system,table,facility_type,code,size_category,anchoring,damage_state,median_g,beta
+Water,8-4,Water Treatment Plant,PWTS,Small,Anchored,Slight,0.25,0.5
+Water,8-4,Water Treatment Plant,PWTS,Small,Anchored,Moderate,0.38,0.5
+Water,8-4,Water Treatment Plant,PWTS,Small,Anchored,Extensive,0.53,0.6
+Water,8-4,Water Treatment Plant,PWTS,Small,Anchored,Complete,0.83,0.6
+Water,8-4,Water Treatment Plant,PWTS,Small,Unanchored,Slight,0.16,0.4
+Water,8-4,Water Treatment Plant,PWTS,Small,Unanchored,Moderate,0.27,0.4
+Water,8-4,Water Treatment Plant,PWTS,Small,Unanchored,Extensive,0.53,0.6
+Water,8-4,Water Treatment Plant,PWTS,Small,Unanchored,Complete,0.83,0.6
+Water,8-5,Water Treatment Plant,PWTM,Medium,Anchored,Slight,0.37,0.4
+Water,8-5,Water Treatment Plant,PWTM,Medium,Anchored,Moderate,0.52,0.4
+Water,8-5,Water Treatment Plant,PWTM,Medium,Anchored,Extensive,0.73,0.5
+Water,8-5,Water Treatment Plant,PWTM,Medium,Anchored,Complete,1.28,0.5
+Water,8-5,Water Treatment Plant,PWTM,Medium,Unanchored,Slight,0.2,0.4
+Water,8-5,Water Treatment Plant,PWTM,Medium,Unanchored,Moderate,0.35,0.4
+Water,8-5,Water Treatment Plant,PWTM,Medium,Unanchored,Extensive,0.75,0.5
+Water,8-5,Water Treatment Plant,PWTM,Medium,Unanchored,Complete,1.28,0.5
+Water,8-6,Water Treatment Plant,PWTL,Large,Anchored,Slight,0.44,0.4
+Water,8-6,Water Treatment Plant,PWTL,Large,Anchored,Moderate,0.58,0.4
+Water,8-6,Water Treatment Plant,PWTL,Large,Anchored,Extensive,0.87,0.45
+Water,8-6,Water Treatment Plant,PWTL,Large,Anchored,Complete,1.57,0.45
+Water,8-6,Water Treatment Plant,PWTL,Large,Unanchored,Slight,0.22,0.4
+Water,8-6,Water Treatment Plant,PWTL,Large,Unanchored,Moderate,0.35,0.4
+Water,8-6,Water Treatment Plant,PWTL,Large,Unanchored,Extensive,0.87,0.45
+Water,8-6,Water Treatment Plant,PWTL,Large,Unanchored,Complete,1.57,0.45
+Water,8-7,Pumping Plant,PPPS,Small,Anchored,Slight,0.15,0.7
+Water,8-7,Pumping Plant,PPPS,Small,Anchored,Moderate,0.36,0.65
+Water,8-7,Pumping Plant,PPPS,Small,Anchored,Extensive,0.66,0.65
+Water,8-7,Pumping Plant,PPPS,Small,Anchored,Complete,1.5,0.8
+Water,8-7,Pumping Plant,PPPS,Small,Unanchored,Slight,0.13,0.6
+Water,8-7,Pumping Plant,PPPS,Small,Unanchored,Moderate,0.28,0.5
+Water,8-7,Pumping Plant,PPPS,Small,Unanchored,Extensive,0.66,0.65
+Water,8-7,Pumping Plant,PPPS,Small,Unanchored,Complete,1.5,0.8
+Water,8-8,Pumping Plant,PPPM/PPPL,Medium/Large,Anchored,Slight,0.15,0.75
+Water,8-8,Pumping Plant,PPPM/PPPL,Medium/Large,Anchored,Moderate,0.36,0.65
+Water,8-8,Pumping Plant,PPPM/PPPL,Medium/Large,Anchored,Extensive,0.77,0.65
+Water,8-8,Pumping Plant,PPPM/PPPL,Medium/Large,Anchored,Complete,1.5,0.8
+Water,8-8,Pumping Plant,PPPM/PPPL,Medium/Large,Unanchored,Slight,0.13,0.6
+Water,8-8,Pumping Plant,PPPM/PPPL,Medium/Large,Unanchored,Moderate,0.28,0.5
+Water,8-8,Pumping Plant,PPPM/PPPL,Medium/Large,Unanchored,Extensive,0.77,0.65
+Water,8-8,Pumping Plant,PPPM/PPPL,Medium/Large,Unanchored,Complete,1.5,0.8
+Water,8-9,Well,PWE,N/A,Anchored (assumed),Slight,0.15,0.75
+Water,8-9,Well,PWE,N/A,Anchored (assumed),Moderate,0.36,0.65
+Water,8-9,Well,PWE,N/A,Anchored (assumed),Extensive,0.72,0.65
+Water,8-9,Well,PWE,N/A,Anchored (assumed),Complete,1.5,0.8
+Water,8-10,On-Ground Concrete Tank,PSTGC,N/A,Anchored,Slight,0.25,0.55
+Water,8-10,On-Ground Concrete Tank,PSTGC,N/A,Anchored,Moderate,0.52,0.7
+Water,8-10,On-Ground Concrete Tank,PSTGC,N/A,Anchored,Extensive,0.95,0.6
+Water,8-10,On-Ground Concrete Tank,PSTGC,N/A,Anchored,Complete,1.64,0.7
+Water,8-10,On-Ground Concrete Tank,PSTGC,N/A,Unanchored,Slight,0.18,0.6
+Water,8-10,On-Ground Concrete Tank,PSTGC,N/A,Unanchored,Moderate,0.42,0.7
+Water,8-10,On-Ground Concrete Tank,PSTGC,N/A,Unanchored,Extensive,0.7,0.55
+Water,8-10,On-Ground Concrete Tank,PSTGC,N/A,Unanchored,Complete,1.04,0.6
+Water,8-10,On-Ground Steel Tank,PSTGS,N/A,Anchored,Slight,0.3,0.6
+Water,8-10,On-Ground Steel Tank,PSTGS,N/A,Anchored,Moderate,0.7,0.6
+Water,8-10,On-Ground Steel Tank,PSTGS,N/A,Anchored,Extensive,1.25,0.65
+Water,8-10,On-Ground Steel Tank,PSTGS,N/A,Anchored,Complete,1.6,0.6
+Water,8-10,On-Ground Steel Tank,PSTGS,N/A,Unanchored,Slight,0.15,0.7
+Water,8-10,On-Ground Steel Tank,PSTGS,N/A,Unanchored,Moderate,0.35,0.75
+Water,8-10,On-Ground Steel Tank,PSTGS,N/A,Unanchored,Extensive,0.68,0.75
+Water,8-10,On-Ground Steel Tank,PSTGS,N/A,Unanchored,Complete,0.95,0.7
+Water,8-10,Above-Ground Steel Tank,PSTAS,N/A,N/A,Slight,0.18,0.5
+Water,8-10,Above-Ground Steel Tank,PSTAS,N/A,N/A,Moderate,0.55,0.5
+Water,8-10,Above-Ground Steel Tank,PSTAS,N/A,N/A,Extensive,1.15,0.6
+Water,8-10,Above-Ground Steel Tank,PSTAS,N/A,N/A,Complete,1.5,0.6
+Water,8-10,On-Ground Wood Tank,PSTGW,N/A,N/A,Slight,0.15,0.6
+Water,8-10,On-Ground Wood Tank,PSTGW,N/A,N/A,Moderate,0.4,0.6
+Water,8-10,On-Ground Wood Tank,PSTGW,N/A,N/A,Extensive,0.7,0.7
+Water,8-10,On-Ground Wood Tank,PSTGW,N/A,N/A,Complete,0.9,0.7
+Wastewater,8-16,Wastewater Treatment Plant,WWTS,Small,Anchored,Slight,0.23,0.4
+Wastewater,8-16,Wastewater Treatment Plant,WWTS,Small,Anchored,Moderate,0.35,0.4
+Wastewater,8-16,Wastewater Treatment Plant,WWTS,Small,Anchored,Extensive,0.48,0.5
+Wastewater,8-16,Wastewater Treatment Plant,WWTS,Small,Anchored,Complete,0.8,0.55
+Wastewater,8-16,Wastewater Treatment Plant,WWT2,Small,Unanchored,Slight,0.16,0.4
+Wastewater,8-16,Wastewater Treatment Plant,WWT2,Small,Unanchored,Moderate,0.26,0.4
+Wastewater,8-16,Wastewater Treatment Plant,WWT2,Small,Unanchored,Extensive,0.48,0.5
+Wastewater,8-16,Wastewater Treatment Plant,WWT2,Small,Unanchored,Complete,0.8,0.55
+Wastewater,8-17,Wastewater Treatment Plant,WWTM,Medium,Anchored,Slight,0.33,0.4
+Wastewater,8-17,Wastewater Treatment Plant,WWTM,Medium,Anchored,Moderate,0.49,0.4
+Wastewater,8-17,Wastewater Treatment Plant,WWTM,Medium,Anchored,Extensive,0.7,0.45
+Wastewater,8-17,Wastewater Treatment Plant,WWTM,Medium,Anchored,Complete,1.23,0.55
+Wastewater,8-17,Wastewater Treatment Plant,WWTM,Medium,Unanchored,Slight,0.2,0.4
+Wastewater,8-17,Wastewater Treatment Plant,WWTM,Medium,Unanchored,Moderate,0.33,0.4
+Wastewater,8-17,Wastewater Treatment Plant,WWTM,Medium,Unanchored,Extensive,0.7,0.45
+Wastewater,8-17,Wastewater Treatment Plant,WWTM,Medium,Unanchored,Complete,1.23,0.55
+Wastewater,8-18,Wastewater Treatment Plant,WWTL,Large,Anchored,Slight,0.4,0.4
+Wastewater,8-18,Wastewater Treatment Plant,WWTL,Large,Anchored,Moderate,0.56,0.4
+Wastewater,8-18,Wastewater Treatment Plant,WWTL,Large,Anchored,Extensive,0.84,0.4
+Wastewater,8-18,Wastewater Treatment Plant,WWTL,Large,Anchored,Complete,1.5,0.4
+Wastewater,8-18,Wastewater Treatment Plant,WWTL,Large,Unanchored,Slight,0.22,0.4
+Wastewater,8-18,Wastewater Treatment Plant,WWTL,Large,Unanchored,Moderate,0.35,0.4
+Wastewater,8-18,Wastewater Treatment Plant,WWTL,Large,Unanchored,Extensive,0.84,0.4
+Wastewater,8-18,Wastewater Treatment Plant,WWTL,Large,Unanchored,Complete,1.5,0.4
+Oil,8-22,Refinery,ORF1,"Small (<100,000 bbl/day)",Anchored,Slight,0.29,0.55
+Oil,8-22,Refinery,ORF1,"Small (<100,000 bbl/day)",Anchored,Moderate,0.52,0.5
+Oil,8-22,Refinery,ORF1,"Small (<100,000 bbl/day)",Anchored,Extensive,0.64,0.6
+Oil,8-22,Refinery,ORF1,"Small (<100,000 bbl/day)",Anchored,Complete,0.86,0.55
+Oil,8-22,Refinery,ORF2,"Small (<100,000 bbl/day)",Unanchored,Slight,0.13,0.5
+Oil,8-22,Refinery,ORF2,"Small (<100,000 bbl/day)",Unanchored,Moderate,0.27,0.5
+Oil,8-22,Refinery,ORF2,"Small (<100,000 bbl/day)",Unanchored,Extensive,0.43,0.6
+Oil,8-22,Refinery,ORF2,"Small (<100,000 bbl/day)",Unanchored,Complete,0.68,0.55
+Oil,8-23,Refinery,ORF3,"Medium/Large (>=100,000 bbl/day)",Anchored,Slight,0.38,0.45
+Oil,8-23,Refinery,ORF3,"Medium/Large (>=100,000 bbl/day)",Anchored,Moderate,0.6,0.45
+Oil,8-23,Refinery,ORF3,"Medium/Large (>=100,000 bbl/day)",Anchored,Extensive,0.98,0.5
+Oil,8-23,Refinery,ORF3,"Medium/Large (>=100,000 bbl/day)",Anchored,Complete,1.26,0.45
+Oil,8-23,Refinery,ORF4,"Medium/Large (>=100,000 bbl/day)",Unanchored,Slight,0.17,0.4
+Oil,8-23,Refinery,ORF4,"Medium/Large (>=100,000 bbl/day)",Unanchored,Moderate,0.32,0.45
+Oil,8-23,Refinery,ORF4,"Medium/Large (>=100,000 bbl/day)",Unanchored,Extensive,0.68,0.5
+Oil,8-23,Refinery,ORF4,"Medium/Large (>=100,000 bbl/day)",Unanchored,Complete,1.04,0.45
+Oil,8-24,Pumping Plant,OPP,N/A,Anchored,Slight,0.15,0.75
+Oil,8-24,Pumping Plant,OPP,N/A,Anchored,Moderate,0.34,0.65
+Oil,8-24,Pumping Plant,OPP,N/A,Anchored,Extensive,0.77,0.65
+Oil,8-24,Pumping Plant,OPP,N/A,Anchored,Complete,1.5,0.8
+Oil,8-24,Pumping Plant,OPP,N/A,Unanchored,Slight,0.12,0.6
+Oil,8-24,Pumping Plant,OPP,N/A,Unanchored,Moderate,0.24,0.6
+Oil,8-24,Pumping Plant,OPP,N/A,Unanchored,Extensive,0.77,0.65
+Oil,8-24,Pumping Plant,OPP,N/A,Unanchored,Complete,1.5,0.8
+Oil,8-25,Tank Farm,OTF1,N/A,Anchored,Slight,0.29,0.55
+Oil,8-25,Tank Farm,OTF1,N/A,Anchored,Moderate/Extensive,0.5,0.55
+Oil,8-25,Tank Farm,OTF1,N/A,Anchored,Complete,0.87,0.5
+Oil,8-25,Tank Farm,OTF2,N/A,Unanchored,Slight,0.12,0.55
+Oil,8-25,Tank Farm,OTF2,N/A,Unanchored,Moderate,0.23,0.55
+Oil,8-25,Tank Farm,OTF2,N/A,Unanchored,Extensive,0.41,0.55
+Oil,8-25,Tank Farm,OTF2,N/A,Unanchored,Complete,0.68,0.55
+Power,8-29,Substation,ESSL,Low Voltage,Anchored/Seismic,Slight,0.15,0.7
+Power,8-29,Substation,ESSL,Low Voltage,Anchored/Seismic,Moderate,0.29,0.55
+Power,8-29,Substation,ESSL,Low Voltage,Anchored/Seismic,Extensive,0.45,0.45
+Power,8-29,Substation,ESSL,Low Voltage,Anchored/Seismic,Complete,0.9,0.45
+Power,8-29,Substation,ESSL,Low Voltage,Unanchored/Standard,Slight,0.13,0.65
+Power,8-29,Substation,ESSL,Low Voltage,Unanchored/Standard,Moderate,0.26,0.5
+Power,8-29,Substation,ESSL,Low Voltage,Unanchored/Standard,Extensive,0.34,0.4
+Power,8-29,Substation,ESSL,Low Voltage,Unanchored/Standard,Complete,0.74,0.4
+Power,8-29,Substation,ESSM,Medium Voltage,Anchored/Seismic,Slight,0.15,0.6
+Power,8-29,Substation,ESSM,Medium Voltage,Anchored/Seismic,Moderate,0.25,0.5
+Power,8-29,Substation,ESSM,Medium Voltage,Anchored/Seismic,Extensive,0.35,0.4
+Power,8-29,Substation,ESSM,Medium Voltage,Anchored/Seismic,Complete,0.7,0.4
+Power,8-29,Substation,ESSM,Medium Voltage,Unanchored/Standard,Slight,0.1,0.6
+Power,8-29,Substation,ESSM,Medium Voltage,Unanchored/Standard,Moderate,0.2,0.5
+Power,8-29,Substation,ESSM,Medium Voltage,Unanchored/Standard,Extensive,0.3,0.4
+Power,8-29,Substation,ESSM,Medium Voltage,Unanchored/Standard,Complete,0.5,0.4
+Power,8-29,Substation,ESSH,High Voltage,Anchored/Seismic,Slight,0.11,0.5
+Power,8-29,Substation,ESSH,High Voltage,Anchored/Seismic,Moderate,0.15,0.45
+Power,8-29,Substation,ESSH,High Voltage,Anchored/Seismic,Extensive,0.2,0.35
+Power,8-29,Substation,ESSH,High Voltage,Anchored/Seismic,Complete,0.47,0.4
+Power,8-29,Substation,ESS6,High Voltage,Unanchored/Standard,Slight,0.09,0.5
+Power,8-29,Substation,ESS6,High Voltage,Unanchored/Standard,Moderate,0.13,0.4
+Power,8-29,Substation,ESS6,High Voltage,Unanchored/Standard,Extensive,0.17,0.35
+Power,8-29,Substation,ESS6,High Voltage,Unanchored/Standard,Complete,0.38,0.35
+Power,8-30,Distribution Circuit,EDC,N/A,Anchored/Seismic,Slight,0.28,0.3
+Power,8-30,Distribution Circuit,EDC,N/A,Anchored/Seismic,Moderate,0.4,0.2
+Power,8-30,Distribution Circuit,EDC,N/A,Anchored/Seismic,Extensive,0.72,0.15
+Power,8-30,Distribution Circuit,EDC,N/A,Anchored/Seismic,Complete,1.1,0.15
+Power,8-30,Distribution Circuit,EDC,N/A,Unanchored/Standard,Slight,0.24,0.25
+Power,8-30,Distribution Circuit,EDC,N/A,Unanchored/Standard,Moderate,0.33,0.2
+Power,8-30,Distribution Circuit,EDC,N/A,Unanchored/Standard,Extensive,0.58,0.15
+Power,8-30,Distribution Circuit,EDC,N/A,Unanchored/Standard,Complete,0.89,0.15
+Power,8-31,Generation Facility,EPPS,Small (<100 MW),Anchored,Slight,0.1,0.55
+Power,8-31,Generation Facility,EPPS,Small (<100 MW),Anchored,Moderate,0.21,0.55
+Power,8-31,Generation Facility,EPPS,Small (<100 MW),Anchored,Extensive,0.48,0.5
+Power,8-31,Generation Facility,EPPS,Small (<100 MW),Anchored,Complete,0.78,0.5
+Power,8-31,Generation Facility,EPPS,Small (<100 MW),Unanchored,Slight,0.1,0.5
+Power,8-31,Generation Facility,EPPS,Small (<100 MW),Unanchored,Moderate,0.17,0.5
+Power,8-31,Generation Facility,EPPS,Small (<100 MW),Unanchored,Extensive,0.42,0.5
+Power,8-31,Generation Facility,EPPS,Small (<100 MW),Unanchored,Complete,0.58,0.55
+Power,8-32,Generation Facility,EPP3,Medium/Large (>=100 MW),Anchored,Slight,0.1,0.6
+Power,8-32,Generation Facility,EPP3,Medium/Large (>=100 MW),Anchored,Moderate,0.25,0.6
+Power,8-32,Generation Facility,EPP3,Medium/Large (>=100 MW),Anchored,Extensive,0.52,0.55
+Power,8-32,Generation Facility,EPP3,Medium/Large (>=100 MW),Anchored,Complete,0.92,0.55
+Power,8-32,Generation Facility,EPP4,Medium/Large (>=100 MW),Unanchored,Slight,0.1,0.6
+Power,8-32,Generation Facility,EPP4,Medium/Large (>=100 MW),Unanchored,Moderate,0.22,0.55
+Power,8-32,Generation Facility,EPP4,Medium/Large (>=100 MW),Unanchored,Extensive,0.49,0.5
+Power,8-32,Generation Facility,EPP4,Medium/Large (>=100 MW),Unanchored,Complete,0.79,0.5
+Communications,8-38,Communication Facility,COM1,N/A,Anchored,Slight,0.15,0.75
+Communications,8-38,Communication Facility,COM1,N/A,Anchored,Moderate,0.32,0.6
+Communications,8-38,Communication Facility,COM1,N/A,Anchored,Extensive,0.6,0.62
+Communications,8-38,Communication Facility,COM1,N/A,Anchored,Complete,1.25,0.65
+Communications,8-38,Communication Facility,COM2,N/A,Unanchored,Slight,0.13,0.55
+Communications,8-38,Communication Facility,COM2,N/A,Unanchored,Moderate,0.26,0.5
+Communications,8-38,Communication Facility,COM2,N/A,Unanchored,Extensive,0.46,0.62
+Communications,8-38,Communication Facility,COM2,N/A,Unanchored,Complete,1.03,0.62

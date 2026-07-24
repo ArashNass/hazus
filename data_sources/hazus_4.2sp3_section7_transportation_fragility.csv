@@ -1,0 +1,73 @@
+system,table,facility_type,code,size_category,anchoring,damage_state,median,unit,beta
+Transportation-Highway/Railway/LightRail,7-9,Tunnel - Bored/Drilled,HTU1,N/A,N/A,Slight,0.6,g,0.6
+Transportation-Highway/Railway/LightRail,7-9,Tunnel - Bored/Drilled,HTU1,N/A,N/A,Moderate,0.8,g,0.6
+Transportation-Highway/Railway/LightRail,7-9,Tunnel - Cut & Cover,HTU2,N/A,N/A,Slight,0.5,g,0.6
+Transportation-Highway/Railway/LightRail,7-9,Tunnel - Cut & Cover,HTU2,N/A,N/A,Moderate,0.7,g,0.6
+Transportation-Highway/Railway/LightRail,7-9,Tunnel - Bored/Drilled,HTU1,N/A,PGD,Slight,6.0,in,0.7
+Transportation-Highway/Railway/LightRail,7-9,Tunnel - Bored/Drilled,HTU1,N/A,PGD,Moderate,12.0,in,0.5
+Transportation-Highway/Railway/LightRail,7-9,Tunnel - Bored/Drilled,HTU1,N/A,PGD,Extensive/Complete,60.0,in,0.5
+Transportation-Highway/Railway/LightRail,7-9,Tunnel - Cut & Cover,HTU2,N/A,PGD,Slight,6.0,in,0.7
+Transportation-Highway/Railway/LightRail,7-9,Tunnel - Cut & Cover,HTU2,N/A,PGD,Moderate,12.0,in,0.5
+Transportation-Highway/Railway/LightRail,7-9,Tunnel - Cut & Cover,HTU2,N/A,PGD,Extensive/Complete,60.0,in,0.5
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Anchored w/ Backup Power,Slight,0.23,g,0.5
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Anchored w/ Backup Power,Moderate,0.43,g,0.45
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Anchored w/ Backup Power,Extensive,0.64,g,0.6
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Anchored w/ Backup Power,Complete,1.1,g,0.6
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Anchored w/o Backup Power,Slight,0.12,g,0.55
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Anchored w/o Backup Power,Moderate,0.27,g,0.5
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Anchored w/o Backup Power,Extensive,0.64,g,0.6
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Anchored w/o Backup Power,Complete,1.1,g,0.6
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Unanchored w/ Backup Power,Slight,0.1,g,0.55
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Unanchored w/ Backup Power,Moderate,0.23,g,0.5
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Unanchored w/ Backup Power,Extensive,0.48,g,0.6
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Unanchored w/ Backup Power,Complete,0.8,g,0.6
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Unanchored w/o Backup Power,Slight,0.09,g,0.5
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Unanchored w/o Backup Power,Moderate,0.2,g,0.45
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Unanchored w/o Backup Power,Extensive,0.48,g,0.6
+Transportation-Railway/LightRail/Airport,7-12,Fuel Facility,N/A,N/A,Unanchored w/o Backup Power,Complete,0.8,g,0.6
+Transportation-Railway/LightRail/Airport,7-13,Fuel Facility - Buried Tanks,N/A,N/A,N/A,Slight,4,in,0.5
+Transportation-Railway/LightRail/Airport,7-13,Fuel Facility - Buried Tanks,N/A,N/A,N/A,Moderate,8,in,0.5
+Transportation-Railway/LightRail/Airport,7-13,Fuel Facility - Buried Tanks,N/A,N/A,N/A,Extensive/Complete,24,in,0.5
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Anchored w/ Backup Power,Slight,0.15,g,0.75
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Anchored w/ Backup Power,Moderate,0.35,g,0.65
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Anchored w/ Backup Power,Extensive,0.8,g,0.8
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Anchored w/ Backup Power,Complete,1.5,g,0.8
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Anchored w/o Backup Power,Slight,0.12,g,0.5
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Anchored w/o Backup Power,Moderate,0.27,g,0.45
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Anchored w/o Backup Power,Extensive,0.8,g,0.8
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Anchored w/o Backup Power,Complete,1.1,g,0.8
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Unanchored w/ Backup Power,Slight,0.13,g,0.55
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Unanchored w/ Backup Power,Moderate,0.28,g,0.5
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Unanchored w/ Backup Power,Extensive,0.8,g,0.8
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Unanchored w/ Backup Power,Complete,1.5,g,0.8
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Unanchored w/o Backup Power,Slight,0.11,g,0.45
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Unanchored w/o Backup Power,Moderate,0.23,g,0.4
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Unanchored w/o Backup Power,Extensive,0.8,g,0.8
+Transportation-Railway/LightRail,7-14,Dispatch Facility,N/A,N/A,Unanchored w/o Backup Power,Complete,1.5,g,0.8
+Transportation-LightRail,7-15,DC Power Substation,N/A,N/A,Anchored,Slight,0.12,g,0.55
+Transportation-LightRail,7-15,DC Power Substation,N/A,N/A,Anchored,Moderate,0.27,g,0.45
+Transportation-LightRail,7-15,DC Power Substation,N/A,N/A,Anchored,Extensive,0.8,g,0.8
+Transportation-LightRail,7-15,DC Power Substation,N/A,N/A,Anchored,Complete,1.5,g,0.8
+Transportation-LightRail,7-15,DC Power Substation,N/A,N/A,Unanchored,Slight,0.11,g,0.5
+Transportation-LightRail,7-15,DC Power Substation,N/A,N/A,Unanchored,Moderate,0.23,g,0.4
+Transportation-LightRail,7-15,DC Power Substation,N/A,N/A,Unanchored,Extensive,0.8,g,0.8
+Transportation-LightRail,7-15,DC Power Substation,N/A,N/A,Unanchored,Complete,1.5,g,0.8
+Transportation-Port,7-18,Waterfront Structure,PWS,N/A,N/A,Slight,5,in,0.5
+Transportation-Port,7-18,Waterfront Structure,PWS,N/A,N/A,Moderate,12,in,0.5
+Transportation-Port,7-18,Waterfront Structure,PWS,N/A,N/A,Extensive,17,in,0.5
+Transportation-Port,7-18,Waterfront Structure,PWS,N/A,N/A,Complete,43,in,0.5
+Transportation-Port,7-19,Crane/Cargo Handling Equipment,PEQ1/PEQ2,N/A,Anchored/Stationary,Slight,0.3,g,0.6
+Transportation-Port,7-19,Crane/Cargo Handling Equipment,PEQ1/PEQ2,N/A,Anchored/Stationary,Moderate,0.5,g,0.6
+Transportation-Port,7-19,Crane/Cargo Handling Equipment,PEQ1/PEQ2,N/A,Anchored/Stationary,Extensive/Complete,1.0,g,0.7
+Transportation-Port,7-19,Crane/Cargo Handling Equipment,PEQ1/PEQ2,N/A,Unanchored/Rail-mounted,Slight,0.15,g,0.6
+Transportation-Port,7-19,Crane/Cargo Handling Equipment,PEQ1/PEQ2,N/A,Unanchored/Rail-mounted,Moderate,0.35,g,0.6
+Transportation-Port,7-19,Crane/Cargo Handling Equipment,PEQ1/PEQ2,N/A,Unanchored/Rail-mounted,Extensive/Complete,0.8,g,0.7
+Transportation-Port,7-20,Crane/Cargo Handling Equipment,PEQ1/PEQ2,N/A,Anchored/Stationary,Slight,3,in,0.6
+Transportation-Port,7-20,Crane/Cargo Handling Equipment,PEQ1/PEQ2,N/A,Anchored/Stationary,Moderate,6,in,0.7
+Transportation-Port,7-20,Crane/Cargo Handling Equipment,PEQ1/PEQ2,N/A,Anchored/Stationary,Extensive/Complete,12.0,in,0.7
+Transportation-Port,7-20,Crane/Cargo Handling Equipment,PEQ1/PEQ2,N/A,Unanchored/Rail-mounted,Slight,2,in,0.6
+Transportation-Port,7-20,Crane/Cargo Handling Equipment,PEQ1/PEQ2,N/A,Unanchored/Rail-mounted,Moderate,4.0,in,0.6
+Transportation-Port,7-20,Crane/Cargo Handling Equipment,PEQ1/PEQ2,N/A,Unanchored/Rail-mounted,Extensive/Complete,10,in,0.7
+Transportation-Airport,7-23,Runway,N/A,N/A,N/A,Slight/Moderate,1,in,0.6
+Transportation-Airport,7-23,Runway,N/A,N/A,N/A,Extensive,4,in,0.6
+Transportation-Airport,7-23,Runway,N/A,N/A,N/A,Complete,12,in,0.6
