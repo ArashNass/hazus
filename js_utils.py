@@ -12,11 +12,12 @@ const OCC={RES1:'Single family home',RES2:'Mobile home',RES3:'Multi-family',RES4
   GOV1:'Government services',GOV2:'Emergency response',EDU1:'Schools K-12',
   EDU2:'Colleges/universities',COM:'Commercial',EDU:'Education',INDX:'Industrial'};
 
-let flChart=null,wiChart=null,eqChart=null;
-let flUM='m',wiAM='3s',wiSM='ms',eqUM='g';
+let flChart=null,wiChart=null,eqChart=null,utilChart=null;
+let flUM='m',wiAM='3s',wiSM='ms',eqUM='g',utilUM='g';
 let flCmp=false,flR1=null,flR2=null,flTC=1;
 let wiCmp=false,wiR1=null,wiR2=null,wiTC=1;
 let eqCmp=false,eqB1=null,eqC1=null,eqB2=null,eqC2=null,eqTC=1;
+let utilCmp=false,utilR1=null,utilR2=null,utilTC=1;
 
 function show(id,btn){
   document.querySelectorAll('.nav-tab').forEach(function(t){t.classList.remove('active');});
@@ -24,6 +25,7 @@ function show(id,btn){
   btn.classList.add('active');
   document.getElementById('page-'+id).classList.add('active');
   if(id==='eq' &&!eqChart)  eqFilter();
+  if(id==='util'&&typeof utilInit==='function'&&!utilR1) utilInit();
   if(id==='gem'&&typeof gemFilter==='function') gemFilter();
   if(id==='jrc'  &&typeof jrcDraw  ==='function') jrcDraw();
   if(id==='etris'&&typeof etrisInit==='function')  etrisInit();
@@ -126,7 +128,7 @@ function exportPNG(canvasId, titleId) {
   }
   var a = document.createElement('a');
   a.href = exp.toDataURL('image/png');
-  a.download = (canvasId==='fl-c'?'flood':canvasId==='wi-c'?'wind':'earthquake')+'_vulnerability.png';
+  a.download = (canvasId==='fl-c'?'flood':canvasId==='wi-c'?'wind':canvasId==='util-c'?'utility':'earthquake')+'_vulnerability.png';
   a.click();
 }
 

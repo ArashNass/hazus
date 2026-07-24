@@ -75,6 +75,7 @@ print("Importing modules...")
 from data_flood      import extract_flood
 from data_wind       import extract_wind
 from data_earthquake import EQ_DB
+from data_utility    import extract_utility
 from data_ci         import extract_ci
 from data_validate    import validate_eq_median_row, log_problems
 from html_builder    import build_html
@@ -175,6 +176,9 @@ if os.path.isdir(ci_src):
 else:
     print("  SKIP: Critical Infrastructure - Nirandjan 2024 not found")
 
+# ── Hazus Utility Fragility CSV ──
+utility = extract_utility(os.path.join(DATA, 'hazus_4.2sp3_section8_utility_fragility.csv'))
+
 t1 = time.time()
 print(f"\nData extraction: {t1-t0:.1f}s")
 
@@ -195,6 +199,7 @@ print(f"  JRC flood    : {len(jrc)} curves")
 print(f"  ETRiS tsunami: {len(etris)} curves")
 print(f"  ESRM20 EQ    : {len(esrm)} functions")
 print(f"  CI infra     : {len(ci)} curves")
+print(f"  Utility EQ   : {len(utility)} curves")
 
 # ── Generate dashboard ──
 print("\nGenerating dashboard...")
@@ -209,6 +214,7 @@ html = build_html(
     etris_json   = d(etris),
     esrm_json    = d(esrm),
     ci_json      = d(ci),
+    utility_json = d(utility),
 )
 with open(DASHBOARD, 'w', encoding='utf-8') as fh:
     fh.write(html)

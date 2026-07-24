@@ -10,11 +10,12 @@ from js_utils import get_utils_js
 from js_flood import get_flood_js
 from js_wind  import get_wind_js
 from js_eq    import get_eq_js
+from js_utility import get_utility_js
 # NOTE: js_gem, js_jrc, js_etris, js_esrm, js_ci, js_wizard are not present
 # in this repo. Their tabs are removed from the nav below and their JS is
 # intentionally not imported or called anywhere in this file.
 
-def build_html(flood_json: str, wind_json: str, eq_json: str, gem_json: str = '[]', jrc_json: str = '[]', gem_pga_json: str = '[]', etris_json: str = '[]', esrm_json: str = '[]', ci_json: str = '[]') -> str:
+def build_html(flood_json: str, wind_json: str, eq_json: str, gem_json: str = '[]', jrc_json: str = '[]', gem_pga_json: str = '[]', etris_json: str = '[]', esrm_json: str = '[]', ci_json: str = '[]', utility_json: str = '[]') -> str:
     parts = []
 
     parts.append('''<!DOCTYPE html>
@@ -23,13 +24,13 @@ def build_html(flood_json: str, wind_json: str, eq_json: str, gem_json: str = '[
 <meta charset="UTF-8">\n<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">\n<meta http-equiv="Pragma" content="no-cache">\n<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%3E%3Crect%20width%3D%2724%27%20height%3D%2724%27%20rx%3D%275%27%20fill%3D%27%230f2350%27%2F%3E%3Cpath%20d%3D%27M3%2018h18M5%2018V9l4-4%204%204v9M13%2018v-6l3-3%203%203v6%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%271.9%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%2F%3E%3C%2Fsvg%3E">
-<title>Hazus Vulnerability Curves - Flood, Wind &amp; Earthquake | Arash Nassirpour</title>
-<meta name="description" content="Explore and compare FEMA Hazus flood depth-damage functions, wind vulnerability curves and earthquake fragility functions in an interactive dashboard.">
+<title>Hazus Vulnerability Curves - Flood, Wind, Earthquake &amp; Utility | Arash Nassirpour</title>
+<meta name="description" content="Explore and compare FEMA Hazus flood depth-damage functions, wind vulnerability curves, earthquake fragility functions and utility fragility curves in an interactive dashboard.">
 <link rel="canonical" href="https://arashnassirpour.com/hazus/HAZUS_Dashboard.html">
 <meta name="author" content="Arash Nassirpour">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta property="og:title" content="Hazus Vulnerability Curves - Flood, Wind &amp; Earthquake">
-<meta property="og:description" content="Explore FEMA Hazus flood, wind and earthquake vulnerability functions in an interactive dashboard.">
+<meta property="og:title" content="Hazus Vulnerability Curves - Flood, Wind, Earthquake &amp; Utility">
+<meta property="og:description" content="Explore FEMA Hazus flood, wind, earthquake and utility fragility functions in an interactive dashboard.">
 <meta property="og:url" content="https://arashnassirpour.com/hazus/HAZUS_Dashboard.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Arash Nassirpour">
@@ -254,6 +255,7 @@ tbody tr:last-child td{border-bottom:none}
     <button class="nav-tab active" onclick="show('flood',this)" data-tab="flood">Flood Vulnerability</button>
     <button class="nav-tab" onclick="show('wind',this)" data-tab="wind">Wind Vulnerability</button>
     <button class="nav-tab" onclick="show('eq',this)" data-tab="eq">Earthquake Fragility</button>
+    <button class="nav-tab" onclick="show('util',this)" data-tab="util">Utility Fragility</button>
   </div>
 </div>
 ''')
@@ -603,6 +605,84 @@ tbody tr:last-child td{border-bottom:none}
         <div class="tbl-wrap"><table>
           <thead id="eq-thead"><tr><th>PGA (g)</th><th>PGA (m/s&#178;)</th><th>Slight</th><th>Moderate</th><th>Extensive</th><th>Complete</th></tr></thead>
           <tbody id="eq-tbody"></tbody>
+        </table></div>
+      </div>
+    </div>
+  </div>
+</div>''')
+
+    # ── HAZUS UTILITY ──
+    parts.append('''
+<div id="page-util" class="page">
+  <div class="page-title">Utility Fragility</div>
+  <div class="page-sub">Hazus-MH Section 8 utility fragility functions. Probability of reaching each damage state vs PGA, with state-specific beta values. Source: Hazus 4.2 SP3 utility fragility tables.</div>
+  <div class="filters">
+    <div class="fg"><label>System</label><div class="hint">Utility system category</div>
+      <select id="util-system" onchange="utilFilter()"><option value="">All systems</option></select></div>
+    <div class="fg"><label>Facility type</label><div class="hint">Utility facility class</div>
+      <select id="util-facility" onchange="utilFilter()"><option value="">All facilities</option></select></div>
+    <div class="fg"><label>Anchoring / condition</label><div class="hint">Anchored or unanchored condition</div>
+      <select id="util-anchoring" onchange="utilFilter()"><option value="">All conditions</option></select></div>
+    <div class="fg"><label>Curve</label><div class="hint">Specific Hazus utility curve</div>
+      <select id="util-curve" onchange="utilDraw()"></select></div>
+    <div class="fg" style="justify-content:flex-end;padding-top:20px">
+      <span class="match-count" id="util-match"></span>
+      <button class="reset-btn" onclick="utilReset()">Reset filters</button>
+    </div>
+  </div>
+  <div class="cmp-section">
+    <label class="cmp-toggle" id="util-cmp-lbl">
+      <input type="checkbox" id="util-cmp-chk" onchange="utilCmpToggle()">
+      Compare mode &mdash; overlay a second utility curve on the chart
+    </label>
+    <div class="cmp2-wrap" id="util-cmp2-wrap">
+      <div class="cmp2-label"><span class="cmp2-badge">2</span>Curve 2 &mdash; independent selection</div>
+      <div class="cmp2-grid">
+        <div class="fg"><label>System</label><div class="hint">Utility system category</div>
+          <select id="util-system2" onchange="utilFilter2()"><option value="">All systems</option></select></div>
+        <div class="fg"><label>Facility type</label><div class="hint">Utility facility class</div>
+          <select id="util-facility2" onchange="utilFilter2()"><option value="">All facilities</option></select></div>
+        <div class="fg"><label>Anchoring / condition</label><div class="hint">Anchored or unanchored condition</div>
+          <select id="util-anchoring2" onchange="utilFilter2()"><option value="">All conditions</option></select></div>
+        <div class="fg"><label>Curve</label><div class="hint">Specific Hazus utility curve</div>
+          <select id="util-curve2" onchange="utilDraw2()"></select></div>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-title" id="util-ct">Select a utility curve</div>
+        <div class="card-sub" id="util-cs"></div>
+      </div>
+      <div class="card-body">
+        <div class="unit-switch" style="margin-bottom:14px">
+          <button class="us-btn active" onclick="utilUnit('g',this)">PGA (g)</button>
+          <button class="us-btn" onclick="utilUnit('ms2',this)">PGA (m/s&#178;)</button>
+        </div>
+        <div class="chart-wrap"><canvas id="util-c"></canvas></div>
+        <span id="util-title" style="display:none"></span>
+      </div>
+      <div class="legend-row" id="util-leg"></div>
+      <div class="cmp-legend" id="util-cmp-leg" style="display:none"></div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:14px"><div class="meta-grid" id="util-meta"></div></div>
+      <div class="card">
+        <div class="tbl-tabs" id="util-tbl-tabs" style="display:none">
+          <button class="tbl-tab active" onclick="utilShowTbl(1,this)"><span class="dot" style="background:#0f766e"></span>Curve 1</button>
+          <button class="tbl-tab" onclick="utilShowTbl(2,this)"><span class="dot" style="background:#c900ac"></span>Curve 2</button>
+        </div>
+        <div class="tbl-hdr-row">
+          <span class="tbl-label">Data values</span>
+          <div class="btn-row">
+            <button class="icon-btn" onclick="exportPNG('util-c','util-title')">Save chart</button>
+            <button class="copy-btn" id="util-copy" onclick="utilCopy()">Copy data</button>
+          </div>
+        </div>
+        <div class="tbl-wrap"><table>
+          <thead id="util-thead"><tr><th>PGA (g)</th><th>PGA (m/s&#178;)</th><th>Slight</th><th>Moderate</th><th>Extensive</th><th>Complete</th></tr></thead>
+          <tbody id="util-tbody"></tbody>
         </table></div>
       </div>
     </div>
@@ -1070,6 +1150,7 @@ tbody tr:last-child td{border-bottom:none}
         '\n<script>\nconst FLOOD=' + flood_json +
         ';\nconst WIND='  + wind_json  +
         ';\nconst EQ='    + eq_json    +
+        ';\nconst UTIL='  + utility_json +
         ';\nconst GEM='   + gem_json   +
         ';\nconst JRC='   + jrc_json   +
         ';\nconst GEM_PGA=' + gem_pga_json + ';\nconst ETRIS=' + etris_json + ';\nconst ESRM=' + esrm_json + ';\nconst CI=' + ci_json + ';\nfunction metaEl(el,items){return meta(el,items);}\n</script>'
@@ -1080,7 +1161,8 @@ tbody tr:last-child td{border-bottom:none}
         get_utils_js() + '\n' +
         get_flood_js() + '\n' +
         get_wind_js()  + '\n' +
-        get_eq_js()    +
+        get_eq_js()    + '\n' +
+        get_utility_js() +
         '\n</script>\n' + '<footer class="site-ft"><style>\n.site-ft{background:#0f2350;border-top:1px solid rgba(255,255,255,.08);flex-shrink:0;font-family:Inter,\'Segoe UI\',system-ui,sans-serif}\n.site-ft .ft-in{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:14px 24px}\n.site-ft .ft-copy{font-size:12.5px;color:#fff}\n.site-ft .ft-links{display:flex;align-items:center;gap:16px}\n.site-ft .ft-links a{text-decoration:none;color:#fff;font-size:12.5px;font-weight:500;transition:color .15s;opacity:.85}\n.site-ft .ft-links a:hover{opacity:1}\n.site-ft .ft-ic{display:inline-flex;color:#fff;opacity:.85}\n.site-ft .ft-ic:hover{opacity:1}\n.site-ft .ft-ic svg{width:17px;height:17px}\n@media(max-width:520px){.site-ft .ft-in{justify-content:center;text-align:center}}\n</style><div class="ft-in"><span class="ft-copy">&copy; 2026 Arash Nassirpour. All rights reserved.</span><nav class="ft-links"><a href="/about/">About</a><a href="/contact/">Contact</a><a class="ft-ic" href="https://www.youtube.com/@Structural.Analysis" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M10.3 9.4v5.2l4.6-2.6-4.6-2.6z" fill="currentColor"/></svg></a><a class="ft-ic" href="https://www.linkedin.com/in/arashnassirpour/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V17M8 7.2v.1M12 17v-3.7c0-1.3.9-2.3 2.2-2.3 1.3 0 2.3 1 2.3 2.3V17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a></nav></div></footer>' + '\n</body>\n</html>'
     )
 
