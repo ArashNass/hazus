@@ -1,8 +1,6 @@
-# Builds the site (run.py). Deployment to this repo's own GitHub Pages is
-# currently DISABLED — the built site is instead published manually from
-# the arashnass.github.io hub repo. Auto-running this workflow on every push
-# would fail at the deploy step since there's no Pages target here, so it's
-# manual-only until/unless this repo's own Pages is re-enabled.
+# Builds the site (run.py) and uploads build artifacts only.
+# This repo does not publish to its own GitHub Pages; the generated files are
+# copied manually to the arashnass.github.io hub repo.
 
 name: Build and publish
 
@@ -11,12 +9,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 env:
   CI: true
@@ -25,8 +17,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Install dependencies
@@ -38,18 +30,8 @@ jobs:
           mkdir -p dist
           cp index.html dist/index.html
           cp HAZUS_Dashboard.html dist/HAZUS_Dashboard.html
-      - uses: actions/configure-pages@v5
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
         with:
-          enablement: true
-      - uses: actions/upload-pages-artifact@v3
-        with:
+          name: hazus-dist
           path: dist
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4

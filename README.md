@@ -9,6 +9,7 @@ An interactive browser for catastrophe-model vulnerability and fragility functio
 - **Flood vulnerability:** depth-damage functions by occupancy and building characteristics.
 - **Wind vulnerability:** damage and loss functions from the bundled Hazus wind dataset.
 - **Earthquake fragility:** building-type fragility relationships and median PGA parameters.
+- **Utility fragility:** Hazus utility-system fragility curves with state-specific median PGA and beta values.
 - **Critical infrastructure:** fragility curves organised by infrastructure system.
 - Interactive filtering, curve comparison, charting, and data export.
 - A generated static site that runs entirely in the browser after publication.
@@ -20,6 +21,7 @@ The repository includes the local source files used for the published Hazus view
 - FEMA Hazus 6.1 flood damage functions.
 - FEMA Hazus 6.1 wind functions, with data processing informed by the OS-Climate `physrisk` implementation.
 - Static earthquake building-type and fragility data represented in `data_earthquake.py`.
+- Hazus utility fragility CSV extraction represented in `data_utility.py`.
 - Critical-infrastructure data handled by `data_ci.py`.
 
 FEMA Hazus data is public-domain source material. The surrounding extraction, validation, presentation, and application code is licensed separately under AGPL-3.0-only.

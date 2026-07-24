@@ -1,6 +1,6 @@
 """
 run_test.py — generates HAZUS_Test.html with ONLY:
-  About / HAZUS Flood / HAZUS Wind / HAZUS Earthquake
+  About / HAZUS Flood / HAZUS Wind / HAZUS Earthquake / Utility Fragility
 No GEM, no ETRiS, no ESRM, no JRC, no CI, no Curve Finder.
 Runs in ~5 seconds.
 """
@@ -13,15 +13,17 @@ sys.path.insert(0, FOLDER)
 from data_flood      import extract_flood
 from data_wind       import extract_wind
 from data_earthquake import EQ_DB
+from data_utility    import extract_utility
 from html_builder    import build_html
 
 print("Loading HAZUS data...")
 flood = extract_flood(os.path.join(DATA, 'HAZUS_FLOOD_DAMAGE_REPORT.xlsx'))
 wind  = extract_wind(os.path.join(DATA,  'HAZUS_WIND_DAMAGE_REPORT.xlsx'))
-print(f"  Flood: {len(flood)} | Wind: {len(wind)} | EQ: {len(EQ_DB)} types")
+utility = extract_utility(os.path.join(DATA, 'hazus_4.2sp3_section8_utility_fragility.csv'))
+print(f"  Flood: {len(flood)} | Wind: {len(wind)} | EQ: {len(EQ_DB)} types | Utility: {len(utility)} curves")
 
 d = lambda x: json.dumps(x, separators=(',',':'))
-html = build_html(d(flood), d(wind), d(EQ_DB), '[]','[]','[]','[]','[]','[]')
+html = build_html(d(flood), d(wind), d(EQ_DB), '[]','[]','[]','[]','[]','[]', d(utility))
 
 def find_div_close(html, start_after_open_tag):
     """Given position right after an opening <div ...> tag, return index just
@@ -41,7 +43,7 @@ def find_div_close(html, start_after_open_tag):
             pos = nxt_close + len('</div>')
     return pos
 
-# ── Locate the topbar (brand + nav-tabs) and keep only Flood/Wind/EQ tabs ──
+# ── Locate the topbar (brand + nav-tabs) and keep only Flood/Wind/EQ/Utility tabs ──
 topbar_marker = '<div class="topbar">'
 ts = html.find(topbar_marker)
 te = find_div_close(html, ts + len(topbar_marker))
@@ -56,7 +58,7 @@ topbar_html = re.sub(
     r'<a class="nav-tab"[^>]*>About</a>\s*', '', topbar_html
 )
 
-# ── Keep only the Flood/Wind/EQ page divs (drop GEM/JRC/etc, no wrapper div exists) ──
+# ── Keep only the Flood/Wind/EQ/Utility page divs (drop GEM/JRC/etc, no wrapper div exists) ──
 search_start = te
 all_page_starts = sorted(
     m.start() for m in re.finditer(r'<div id="page-\w+"', html[search_start:])
@@ -66,7 +68,7 @@ footer_pos = html.find('<footer', search_start)
 boundary = footer_pos if footer_pos > 0 else html.find('<script>', search_start)
 
 pages_html = ''
-for tab in ['flood', 'wind', 'eq']:
+for tab in ['flood', 'wind', 'eq', 'util']:
     s = html.find(f'<div id="page-{tab}"', search_start, boundary)
     if s < 0:
         continue
