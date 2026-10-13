@@ -84,7 +84,7 @@ p{font-size:15px;color:var(--g2);line-height:1.7;margin-bottom:16px}
 .arr{transition:transform .2s;color:var(--wtw);flex-shrink:0}
 .arr.open{transform:rotate(180deg)}
 
-footer{text-align:center;padding:16px 32px;font-size:12px;color:#5A5660;border-top:1px solid var(--border);margin-top:16px}
+footer:not(.site-ft){text-align:center;padding:16px 32px;font-size:12px;color:#5A5660;border-top:1px solid var(--border);margin-top:16px}
 
 @media(max-width:900px){
   .features{grid-template-columns:repeat(2,1fr)}
